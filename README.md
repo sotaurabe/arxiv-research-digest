@@ -55,7 +55,7 @@ python scripts/build_profile.py --author-name "Sota Urabe"
 修士論文などのテキストも加味したい場合は、あらかじめPDFからテキストを抽出したファイルを用意し、
 `--extra-text-file path/to/thesis.txt` を追加してください。
 
-今回は修士論文(卜部聡太, 2023年度「Hαフレア」)の内容を実際に読み込み、
+今回は修士論文(浦部蒼太, 2023年度「Hαフレア」)の内容を実際に読み込み、
 `config/thesis_summary_ja.txt` としてメモをまとめた上で `config/research_profile.md` に反映済みです。
 論文のPDFはスキャン起因ではなく通常のLaTeX組版ですが、日本語フォントのCIDマッピングの都合で
 `pdftotext`/`pypdf` によるテキスト抽出では文字化けするため、該当ページを画像化して内容を確認しました。

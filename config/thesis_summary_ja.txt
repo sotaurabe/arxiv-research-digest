@@ -1,6 +1,6 @@
 # 修士論文からの抜粋メモ(研究プロファイル生成の参考資料)
 
-出典: 卜部聡太(Urabe Sota)修士論文, 2023年度提出
+出典: 浦部蒼太(Urabe Sota)修士論文, 2023年度提出
 題目: 「Hαフレア: Flares on close binary system probed by Hα line profiles」
 
 ## アブストラクトの要旨

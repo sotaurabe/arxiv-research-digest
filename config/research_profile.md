@@ -1,7 +1,7 @@
 # 研究プロファイル
 
 このファイルは daily_digest.py が新着論文の関連度を判定する際の「ものさし」として使われます。
-修士論文(卜部聡太, 2023年度「Hαフレア: Flares on close binary system probed by Hα line profiles」)
+修士論文(浦部蒼太, 2023年度「Hαフレア: Flares on close binary system probed by Hα line profiles」)
 および既発表論文(Urabe et al. 2026, PASJ 78, 310 / arXiv:2603.01095)の内容を元に作成しています。
 論文が増えた場合は scripts/build_profile.py を再実行して更新してください。
 

@@ -1,4 +1,3 @@
 __pycache__/
 *.pyc
-data/candidates.json
 data/judged.json

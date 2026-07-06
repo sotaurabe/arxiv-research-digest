@@ -1,11 +1,42 @@
-# arXiv 論文リサーチ・翻訳・要約・通知システム(Claude Code ルーティン版)
+# arXiv 論文リサーチ・翻訳・要約・通知システム
 
-自分の研究分野(初期設定: 恒星フレア / astro-ph.SR, astro-ph.HE)の新着arXiv論文を毎日チェックし、
-研究プロファイルと照らして関連度が高いものだけを日本語要約付きでメール通知します。
+自分の研究分野(初期設定: 恒星フレア / astro-ph.SR, astro-ph.HE)の新着arXiv論文をチェックし、
+研究プロファイルと照らして関連度が高いものだけを日本語要約付きで通知します。
 
-**このリポジトリは Claude Code の「ルーティン」機能での実行を前提にしています。**
-関連度判定・要約・翻訳は Anthropic API を別途叩くのではなく、ルーティンを実行している
-Claude Code エージェント自身が行うため、Proプランの利用枠内で完結し、従量課金は発生しません。
+## 週次Slack通知モード(推奨・追加費用なし)
+
+ローカルMacだけで完結する構成です。LLM処理はローカルの Claude Code CLI (`claude -p`) が
+Pro/Maxプランの利用枠内で行うため、API従量課金は発生しません。
+
+```
+毎日 07:00 (launchd: com.sotaurabe.arxiv-fetch)
+  └─ scripts/local_fetch_and_push.sh
+       arXiv新着を取得し data/candidates.json に蓄積 → push
+
+毎週月曜 08:00 (launchd: com.sotaurabe.arxiv-weekly-digest)
+  └─ scripts/weekly_slack_digest.sh
+       1. git pull + 直近8日分を追加取得(取りこぼし対策)
+       2. scripts/judge_with_claude.py   … claude -p で判定・翻訳・要約
+       3. scripts/post_slack_digest.py   … 関連度8以上をSlackに論文ごとに投稿
+       4. scripts/finalize_weekly.py     … sent_ids更新・candidatesリセット → push
+
+常駐 (launchd: com.sotaurabe.arxiv-slack-agent)
+  └─ scripts/slack_agent.py (Socket Mode)
+       投稿された論文のスレッドに返信すると、claude -p が論文の文脈を
+       踏まえて回答するAIエージェント。スレッドごとに会話を継続。
+```
+
+セットアップ: `config/slack.env.example` を `config/slack.env` にコピーしてSlackの
+トークンを設定し、`launchd/` 内のplistを `~/Library/LaunchAgents/` に置いて
+`launchctl load` してください。Claude Code CLI のインストールとログインも必要です。
+
+---
+
+## (旧構成) Claude Code ルーティン版 / GitHub Actions 版
+
+以下は代替構成です。ルーティン版はルーティン実行環境のネットワーク制限
+(arXiv/Slackへの通信不可、mainへのpush不可)があるため、現在は上記の
+ローカル週次モードを推奨しています。
 
 ## 仕組み
 

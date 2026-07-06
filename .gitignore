@@ -1,3 +1,8 @@
 __pycache__/
 *.pyc
 data/judged.json
+config/slack.env
+data/slack_threads.json
+data/slack_sessions.json
+*.log
+.venv/

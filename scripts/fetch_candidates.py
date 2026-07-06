@@ -20,8 +20,8 @@ import feedparser
 import requests
 
 ARXIV_CATEGORIES = ["astro-ph.SR", "astro-ph.HE"]
-LOOKBACK_DAYS = 1
-MAX_RESULTS = 150
+LOOKBACK_DAYS = int(os.environ.get("ARXIV_LOOKBACK_DAYS", "1"))
+MAX_RESULTS = int(os.environ.get("ARXIV_MAX_RESULTS", "150"))
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SENT_IDS_PATH = os.path.join(BASE_DIR, "data", "sent_ids.json")
@@ -68,16 +68,31 @@ def fetch_recent_papers() -> list[dict]:
     return papers
 
 
+def load_existing_candidates() -> list[dict]:
+    if not os.path.exists(CANDIDATES_PATH):
+        return []
+    with open(CANDIDATES_PATH, encoding="utf-8") as f:
+        try:
+            return json.load(f)
+        except json.JSONDecodeError:
+            return []
+
+
 def main():
     sent_ids = load_sent_ids()
     papers = fetch_recent_papers()
-    candidates = [p for p in papers if p["id"] not in sent_ids]
+
+    # 週次でまとめて判定する運用のため、日々の取得分は既存の候補に追記して蓄積する
+    existing = load_existing_candidates()
+    known_ids = {p["id"] for p in existing} | sent_ids
+    added = [p for p in papers if p["id"] not in known_ids]
+    candidates = existing + added
 
     os.makedirs(os.path.dirname(CANDIDATES_PATH), exist_ok=True)
     with open(CANDIDATES_PATH, "w", encoding="utf-8") as f:
         json.dump(candidates, f, ensure_ascii=False, indent=2)
 
-    print(f"新着 {len(papers)} 件中、未通知の候補 {len(candidates)} 件を {CANDIDATES_PATH} に書き出しました")
+    print(f"新着 {len(papers)} 件中、新規候補 {len(added)} 件を追加(累計 {len(candidates)} 件)→ {CANDIDATES_PATH}")
     if candidates:
         print("\n次のステップ: config/research_profile.md と照らして各論文の関連度を判定し、")
         print("data/judged.json に結果を書き出してください(スキーマはREADME参照)。")

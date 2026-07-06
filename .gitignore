@@ -6,3 +6,4 @@ data/slack_threads.json
 data/slack_sessions.json
 *.log
 .venv/
+.DS_Store

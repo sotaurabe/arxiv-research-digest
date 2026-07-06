@@ -12,6 +12,18 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LOG_FILE="$REPO_DIR/weekly_digest.log"
 
 cd "$REPO_DIR"
+
+# スリープ復帰直後などネットワーク未接続のタイミングに備えたリトライ
+retry() {
+  local i
+  for i in 1 2 3; do
+    "$@" && return 0
+    echo "失敗したため30秒後にリトライします ($i/3): $*"
+    sleep 30
+  done
+  "$@"
+}
+
 {
   echo "===== $(date '+%Y-%m-%d %H:%M:%S') 週次ダイジェスト開始 ====="
 
@@ -20,7 +32,7 @@ cd "$REPO_DIR"
     exit 1
   fi
 
-  git pull --quiet origin main
+  retry git pull --quiet origin main
 
   python3 -m venv .venv --upgrade-deps >/dev/null 2>&1 || true
   source .venv/bin/activate
@@ -34,7 +46,7 @@ cd "$REPO_DIR"
   if ! git diff --quiet -- data/sent_ids.json data/candidates.json; then
     git add data/sent_ids.json data/candidates.json
     git commit -m "chore: weekly digest $(date '+%Y-%m-%d')"
-    git push origin main
+    retry git push origin main
     echo "sent_ids.json / candidates.json をpushしました"
   fi
 

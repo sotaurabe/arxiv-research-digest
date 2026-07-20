@@ -14,6 +14,10 @@ Slackスレッドで論文について対話するAIエージェント。
   SLACK_APP_TOKEN : xapp-... (Socket Mode用App-Level Token)
 """
 
+# macOS標準のPython 3.9では `str | None` 記法が実行時エラーになるため、
+# 型注釈の評価を遅延させる(3.7+で有効)
+from __future__ import annotations
+
 import json
 import os
 import re

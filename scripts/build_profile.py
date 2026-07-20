@@ -13,6 +13,10 @@ daily_digest.py が毎日の関連度判定の "ものさし" として利用す
 論文が増えたら再実行すればプロファイルを更新できる。
 """
 
+# macOS標準のPython 3.9では `str | None` 記法が実行時エラーになるため、
+# 型注釈の評価を遅延させる(3.7+で有効)
+from __future__ import annotations
+
 import argparse
 import json
 import os

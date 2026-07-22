@@ -1,0 +1,66 @@
+<mxfile host="app.diagrams.net" version="24.0.0">
+  <diagram id="arxiv-digest-arch" name="アーキテクチャ">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="mac" value="ローカル Mac（常時稼働・launchd 管理）" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontSize=14;fillColor=#f5f5f5;strokeColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="560" height="700" as="geometry" />
+        </mxCell>
+        <mxCell id="ext" value="外部サービス / クラウド" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontStyle=1;fontSize=14;fillColor=#e6f2ff;strokeColor=#4a90d9;" vertex="1" parent="1">
+          <mxGeometry x="660" y="40" width="400" height="700" as="geometry" />
+        </mxCell>
+
+        <mxCell id="launchd" value="launchd&#10;スケジューラ / 常駐管理" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="job1" value="① 日次ジョブ 07:00&#10;local_fetch_and_push.sh&#10;→ fetch_candidates.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="195" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="job2" value="② 週次ジョブ 月 08:00&#10;weekly_slack_digest.sh&#10;→ judge_with_claude.py&#10;→ post_slack_digest.py&#10;→ finalize_weekly.py" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="295" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="job3" value="③ 常駐エージェント（KeepAlive）&#10;run_slack_agent.sh&#10;→ slack_agent.py（Socket Mode）" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="80" y="425" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cli" value="Claude Code CLI&#10;claude -p&#10;Pro/Max 枠・API 課金なし" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="255" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="data" value="リポジトリ内データ / 設定&#10;candidates.json / sent_ids.json&#10;judged.json / slack_threads.json&#10;slack_sessions.json&#10;research_profile.md" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="350" y="435" width="210" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arxiv" value="arXiv API&#10;export.arxiv.org" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4a90d9;" vertex="1" parent="1">
+          <mxGeometry x="700" y="120" width="320" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="github" value="GitHub リポジトリ&#10;sotaurabe/arxiv-research-digest&#10;candidates / sent_ids の受け渡し" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4a90d9;" vertex="1" parent="1">
+          <mxGeometry x="700" y="300" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="slack" value="Slack ワークスペース&#10;#research-digest&#10;Bot API + Socket Mode" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4a90d9;" vertex="1" parent="1">
+          <mxGeometry x="700" y="470" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="anthropic" value="Anthropic（Claude モデル）&#10;※ CLI 経由・サブスク認証" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#4a90d9;" vertex="1" parent="1">
+          <mxGeometry x="700" y="610" width="320" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_l1" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#6c8ebf;" edge="1" parent="1" source="launchd" target="job1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_l2" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#6c8ebf;" edge="1" parent="1" source="launchd" target="job2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_l3" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;endArrow=block;strokeColor=#6c8ebf;" edge="1" parent="1" source="launchd" target="job3"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_j1arxiv" value="新着取得" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=11;" edge="1" parent="1" source="job1" target="arxiv"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_j1gh" value="candidates.json を push" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=11;" edge="1" parent="1" source="job1" target="github"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_j2gh" value="pull / push" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=11;" edge="1" parent="1" source="job2" target="github"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_j2cli" value="判定・翻訳・要約" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=11;" edge="1" parent="1" source="job2" target="cli"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_j2slack" value="論文を投稿" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=11;" edge="1" parent="1" source="job2" target="slack"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_j2data" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;" edge="1" parent="1" source="job2" target="data"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_j3slack" value="スレッド購読 / 返信" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;startArrow=block;fontSize=11;" edge="1" parent="1" source="job3" target="slack"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_j3cli" value="質問を渡す" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=11;" edge="1" parent="1" source="job3" target="cli"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_j3data" value="スレッド↔論文 参照" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=11;" edge="1" parent="1" source="job3" target="data"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e_cliant" value="サブスク認証" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=11;" edge="1" parent="1" source="cli" target="anthropic"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

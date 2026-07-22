@@ -1,0 +1,20 @@
+# Cloudflare Worker 設定テンプレート。
+# デプロイ手順:
+#   1. npm install -g wrangler && wrangler login
+#   2. 下記のシークレットを登録(値はプロンプトで入力):
+#        wrangler secret put SLACK_SIGNING_SECRET
+#        wrangler secret put GITHUB_DISPATCH_TOKEN
+#   3. wrangler deploy
+#   4. 表示された https://...workers.dev の URL を Slack の
+#      Event Subscriptions → Request URL に設定
+#
+# vars(非機密)はこのファイルに直書きしてよい。機密は secret put で。
+
+name = "slack-arxiv-agent"
+main = "slack-webhook-worker.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+GITHUB_REPO = "sotaurabe/arxiv-research-digest"
+# 監視チャンネルを限定する場合はチャンネルIDを設定(空なら全チャンネル)
+SLACK_CHANNEL_ID = ""

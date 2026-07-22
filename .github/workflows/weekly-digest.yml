@@ -1,0 +1,58 @@
+name: Weekly arXiv Slack Digest
+
+# 週次ダイジェスト(完全クラウド)。
+# GitHub Actions 上で claude -p をサブスク枠(CLAUDE_CODE_OAUTH_TOKEN)で実行するため、
+# API従量課金は発生しない。arXiv取得・Slack投稿もランナーから直接行う。
+
+on:
+  schedule:
+    # JST 月曜 08:00 = UTC 日曜 23:00
+    - cron: "0 23 * * 0"
+  workflow_dispatch: {}   # 手動実行も可
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: pip install requests feedparser
+
+      - name: Install Claude Code CLI
+        run: |
+          curl -fsSL https://claude.ai/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Run weekly digest
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          ARXIV_LOOKBACK_DAYS: "8"
+          ARXIV_MAX_RESULTS: "500"
+          DIGEST_CLAUDE_MODEL: "sonnet"
+        run: |
+          python scripts/fetch_candidates.py
+          python scripts/judge_with_claude.py
+          python scripts/post_slack_digest.py
+          python scripts/finalize_weekly.py
+
+      - name: Commit updated state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/sent_ids.json data/candidates.json data/slack_threads.json
+          git diff --quiet --cached || git commit -m "chore: weekly digest $(date +%F) [skip ci]"
+          git push

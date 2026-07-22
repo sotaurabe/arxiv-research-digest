@@ -3,7 +3,83 @@
 自分の研究分野(初期設定: 恒星フレア / astro-ph.SR, astro-ph.HE)の新着arXiv論文をチェックし、
 研究プロファイルと照らして関連度が高いものだけを日本語要約付きで通知します。
 
-## 週次Slack通知モード(推奨・追加費用なし)
+## 完全クラウドモード(推奨・PC非依存・追加費用なし)
+
+GitHub Actions だけで完結し、Macの常時起動が不要な構成です。LLM処理は Actions ランナー上で
+`claude -p` を **`CLAUDE_CODE_OAUTH_TOKEN`(Claudeサブスク認証)** で実行するため、
+API従量課金は発生しません(X投稿自動化システムと同じ手法)。
+
+```
+週次ダイジェスト (.github/workflows/weekly-digest.yml, cron 月8:00 JST)
+  1. arXiv新着を8日分取得(fetch_candidates.py)
+  2. claude -p で判定・翻訳・要約(judge_with_claude.py)
+  3. 関連度8以上をSlackに投稿(post_slack_digest.py)
+  4. sent_ids更新・candidatesリセット → commit(finalize_weekly.py)
+
+対話エージェント(Webhook方式・即時応答)
+  Slackスレッド返信
+    → Cloudflare Worker (serverless/slack-webhook-worker.js) が署名検証
+    → GitHub repository_dispatch(slack_reply)を発火
+    → .github/workflows/agent-reply.yml が起動
+    → agent_reply_once.py がスレッド文脈を再構築し claude -p で回答を投稿
+```
+
+### セットアップ手順(完全クラウド)
+
+#### 1. Claude サブスク認証トークンを発行
+
+ローカルで Claude Code CLI にログイン済みの状態で、CI用の長期トークンを生成します。
+
+```bash
+claude setup-token   # 表示された CLAUDE_CODE_OAUTH_TOKEN を控える
+```
+
+#### 2. GitHub Secrets を登録
+
+リポジトリの Settings → Secrets and variables → Actions で以下を登録します。
+
+| Secret | 説明 |
+|---|---|
+| `CLAUDE_CODE_OAUTH_TOKEN` | 手順1で発行したトークン |
+| `SLACK_BOT_TOKEN` | Slack Bot User OAuth Token(`xoxb-`) |
+| `SLACK_CHANNEL_ID` | 投稿先チャンネルID(`C0123...`) |
+
+Slackアプリのスコープ(`chat:write` / `reactions:write` / `channels:history`)は
+ローカルモードと同じ。対話をWebhookで受けるため **Socket Mode は不要**(App-Level Token不要)。
+
+#### 3. Slack Events API を有効化
+
+Slackアプリ設定で **Event Subscriptions を ON**、Subscribe to bot events に
+`message.channels`(プライベートchなら `message.groups` も)を追加します。
+Request URL は手順4でWorkerをデプロイしてから設定します。
+
+#### 4. Cloudflare Worker をデプロイ(対話の中継)
+
+```bash
+cd serverless
+npm install -g wrangler && wrangler login
+wrangler secret put SLACK_SIGNING_SECRET    # Slackアプリの Signing Secret
+wrangler secret put GITHUB_DISPATCH_TOKEN   # repo権限のPAT(fine-grainedなら Contents: R/W)
+wrangler deploy
+```
+
+表示された `https://slack-arxiv-agent.<subdomain>.workers.dev` を、手順3の
+Slack **Request URL** に設定(保存時にSlackが検証リクエストを送り、Workerが応答して緑チェック)。
+`wrangler.toml` の `GITHUB_REPO` は自分のリポジトリに合わせてください。
+
+#### 5. 動作確認
+
+- Actions タブ → **Weekly arXiv Slack Digest** → Run workflow で週次を手動実行し、Slack投稿を確認
+- 投稿された論文のスレッドに返信し、数十秒以内に Agent が応答するか確認
+  (応答しない場合は Actions の実行履歴と Cloudflare のログ `wrangler tail` を確認)
+
+> **ローカル週次モード**(下記)との違いは実行場所だけです。完全クラウドでは Mac の常時起動・
+> launchd が不要になり、`data/slack_threads.json` はリポジトリで永続化されます
+> (agent-reply ワークフローが論文の文脈を読むため)。どちらか一方だけを有効にしてください。
+
+---
+
+## 週次Slack通知モード(ローカル版・追加費用なし)
 
 ローカルMacだけで完結する構成です。LLM処理はローカルの Claude Code CLI (`claude -p`) が
 Pro/Maxプランの利用枠内で行うため、API従量課金は発生しません。

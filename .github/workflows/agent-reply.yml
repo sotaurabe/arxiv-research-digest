@@ -1,0 +1,44 @@
+name: Slack Agent Reply
+
+# Slackスレッドでの対話に即時応答する(Webhook方式)。
+# Slack Events API → Cloudflare Worker → repository_dispatch(slack_reply)で起動される。
+# ランナー上で claude -p をサブスク枠で実行して回答を投稿する(使い捨て・API課金なし)。
+
+on:
+  repository_dispatch:
+    types: [slack_reply]
+
+permissions:
+  contents: read
+
+# 同一スレッドへの同時実行を避ける(連投時は最新のみ処理)
+concurrency:
+  group: slack-reply-${{ github.event.client_payload.thread_ts }}
+  cancel-in-progress: false
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: pip install requests
+
+      - name: Install Claude Code CLI
+        run: |
+          curl -fsSL https://claude.ai/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Reply in thread
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          DIGEST_CLAUDE_MODEL: "sonnet"
+          SLACK_CHANNEL: ${{ github.event.client_payload.channel }}
+          SLACK_THREAD_TS: ${{ github.event.client_payload.thread_ts }}
+        run: python scripts/agent_reply_once.py

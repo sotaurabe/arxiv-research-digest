@@ -1,11 +1,1 @@
-[
-  {
-    "id": "0000.00000",
-    "title": "A Dummy Test Paper for Push Pipeline Verification",
-    "abstract": "This is a dummy candidate entry used only to verify that the local fetch-and-push pipeline correctly commits and pushes data/candidates.json to the repository. It is not a real arXiv paper and has deliberately low relevance.",
-    "authors": [
-      "Test Author"
-    ],
-    "url": "https://arxiv.org/abs/0000.00000"
-  }
-]
+[]

@@ -103,8 +103,10 @@ def first_prompt(paper: dict, question: str) -> str:
 
 
 def ask_claude(prompt: str, session_id: str | None) -> tuple[str, str | None]:
+    # --allowedTools は可変長引数 (<tools...>) のため、"--allowedTools value" のように
+    # 分けて渡すと後続の --resume や prompt まで値として飲み込まれうる。"=" 形式で1引数に固定する。
     cmd = [CLAUDE_BIN, "-p", "--model", MODEL, "--output-format", "json",
-           "--allowedTools", "WebFetch(domain:arxiv.org)"]
+           "--allowedTools=WebFetch(domain:arxiv.org)"]
     if session_id:
         cmd += ["--resume", session_id]
     cmd.append(prompt)

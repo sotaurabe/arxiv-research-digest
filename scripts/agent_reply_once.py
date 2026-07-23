@@ -96,9 +96,11 @@ def build_prompt(paper, transcript):
 
 
 def ask_claude(claude_bin, prompt):
+    # --allowedTools は可変長引数 (<tools...>) のため、"--allowedTools value" のように
+    # 分けて渡すと後続の prompt まで値として飲み込まれてしまう。"=" 形式で1引数に固定する。
     cmd = [
         claude_bin, "-p", "--model", MODEL, "--output-format", "json",
-        "--allowedTools", "WebFetch(domain:arxiv.org)", prompt,
+        "--allowedTools=WebFetch(domain:arxiv.org)", prompt,
     ]
     res = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
     if res.returncode != 0:

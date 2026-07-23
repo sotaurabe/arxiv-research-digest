@@ -38,7 +38,9 @@ def load_sent_ids() -> set:
 
 
 def fetch_recent_papers() -> list[dict]:
-    category_query = "+OR+".join(f"cat:{c}" for c in ARXIV_CATEGORIES)
+    # 区切りは半角スペースにする。"+OR+" と書くと requests が "+" を %2B に
+    # エンコードし、arXiv 側でクエリが壊れて常に0件になる
+    category_query = " OR ".join(f"cat:{c}" for c in ARXIV_CATEGORIES)
     params = {
         "search_query": category_query,
         "sortBy": "submittedDate",

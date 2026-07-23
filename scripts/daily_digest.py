@@ -43,7 +43,9 @@ ARXIV_API_URL = "http://export.arxiv.org/api/query"
 
 def fetch_recent_papers() -> list[dict]:
     """arXiv API から指定カテゴリの新着論文を取得する。"""
-    category_query = "+OR+".join(f"cat:{c}" for c in ARXIV_CATEGORIES)
+    # 区切りは半角スペースにする。"+OR+" と書くと requests が "+" を %2B に
+    # エンコードし、arXiv 側でクエリが壊れて常に0件になる
+    category_query = " OR ".join(f"cat:{c}" for c in ARXIV_CATEGORIES)
     params = {
         "search_query": category_query,
         "sortBy": "submittedDate",

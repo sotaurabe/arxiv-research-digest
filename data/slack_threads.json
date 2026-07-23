@@ -1,0 +1,597 @@
+{
+  "1784808563.674339": {
+    "id": "2607.18811v1",
+    "title": "KIC 6464285: A Solar-type Eclipsing Binary in a Hierarchical Triple System with Quasi-periodic Out-of-eclipse Modulations",
+    "title_ja": "KIC 6464285：食外変調を示す階層三重連星系中の太陽型食連星",
+    "authors": [
+      "Fang-Bin Meng",
+      "Li-Ying Zhu",
+      "Sheng-Bang Qian",
+      "Ildar Asfandiyarov",
+      "Azizbek Matekov",
+      "Jaqsiliq Baltamuratov",
+      "Wen-Ping Liao",
+      "A-Li Luo",
+      "Wen Hou",
+      "Ping Li",
+      "Lin-Jia Li",
+      "Er-Gang Zhao",
+      "Jia-Jia He"
+    ],
+    "url": "http://arxiv.org/abs/2607.18811v1",
+    "summary_ja": "Kepler等の測光と分光観測で太陽型三重連星系を解析し、スタースポット活動と30個のスーパーフレア（10^34 erg超）を検出した。連星系での磁気活動・フレア研究としてプロファイルと部分的に関連する。",
+    "abstract": "We present the first detailed analysis of the solar-type triple system KIC 6464285. Combining long-term, high-precision photometry from Kepler, TESS, and ZTF with low-resolution spectra from LAMOST and near-infrared high-resolution spectra from SDSS/APOGEE, we performed a joint analysis of the light curves, eclipse timing variations (ETVs), and radial velocities. Spectroscopic analysis reveals the system to be triple-lined, with the inner binary's primary being a G-type main-sequence star and a mass ratio of $0.627(7)$. Light curve modeling indicates that the inner binary is detached, with filling factors of approximately 26\\% and 11\\% for the primary and secondary, respectively, and a tertiary light contribution of about 27\\%. ETV analysis shows a significant light-travel-time effect (LTTE), consistent with the presence of the tertiary companion, whose minimum mass is estimated as $M_{3,\\rm min}=0.74(1)~M_\\odot$. The light curve exhibits a pronounced O'Connell effect and quasi-periodic variations, indicative of starspot activity modulating the photometry on a $\\sim$131-day timescale. Kepler observations further reveal 30 superflares, each with total energies exceeding $10^{34}$ erg. This study presents detailed observational constraints on the orbital configuration, stellar properties, and magnetic activity of KIC 6464285, providing a benchmark for studies of hierarchical triple systems."
+  },
+  "1784808563.931989": {
+    "id": "2607.17359v1",
+    "title": "A universal scaling between damping time and period of quasi-periodic pulsations from solar EUV brightenings to X-ray stellar flares",
+    "title_ja": "太陽EUV増光からX線恒星フレアまでの準周期パルセーションの減衰時間と周期の普遍的スケーリング則",
+    "authors": [
+      "Daye Lim",
+      "Tom Van Doorsselaere",
+      "Valery M. Nakariakov",
+      "S. Krishna Prasad",
+      "David Berghmans",
+      "Laura A. Hayes",
+      "Kyung-Suk Cho",
+      "Sujin Kim"
+    ],
+    "url": "http://arxiv.org/abs/2607.17359v1",
+    "summary_ja": "Solar Orbiter/EUIとSDO/AIAのデータから太陽EUV増光・フレアのQPPを解析し、X線恒星フレアも含む共通のべき乗則スケーリングを発見。恒星フレアのエネルギー解放機構理解に資する点で関連が高い。",
+    "abstract": "Recent high spatial and temporal resolution extreme-ultraviolet (EUV) imaging observations have revealed that quasi-periodic pulsations (QPPs), a ubiquitous signature of impulsive energy release in solar and stellar flares, are also present in much smaller-scale coronal events known as EUV brightenings. Whether QPPs observed across such disparate spatial and energetic scales share a common physical origin remains an open question. Here we analyse 2,146 EUV brightenings observed with Solar Orbiter/EUI and 300 EUV solar flares observed with SDO/AIA, identifying 185 brightenings and 89 flares exhibiting statistically significant damped QPPs. We show that the relationship between damping time and oscillation period follows a common power-law scaling for EUV brightenings and EUV solar flares, consistent with previously reported X-ray QPPs spanning both solar and stellar flares. The persistence of this scaling over a wide range of energies and scales suggests that QPPs are governed by a common underlying physical mechanism."
+  },
+  "1784808564.180409": {
+    "id": "2607.15719v1",
+    "title": "Explainable AI for Solar Flare Prediction: Quantitative Magnetic Field Analysis of Model-Focused Regions",
+    "title_ja": "太陽フレア予測のための説明可能AI:モデル注目領域の定量的磁場解析",
+    "authors": [
+      "Z. Zheng",
+      "Q. Hao",
+      "C. Li",
+      "P. F. Chen",
+      "J. R. Hu",
+      "M. D. Ding",
+      "C. Fang"
+    ],
+    "url": "http://arxiv.org/abs/2607.15719v1",
+    "summary_ja": "CNNによる太陽フレア予測モデルの注目領域(Grad-CAM)を磁場複雑性の観点で定量検証し、フレア発生と磁場構造の物理的関連を示した研究で、フレアエネルギー論に間接的に関連する。",
+    "abstract": "Solar flares are intense energy release events in the solar atmosphere that may pose significant space weather hazards, which makes developing reliable prediction models essential. Although deep learning methods, particularly convolutional neural networks (CNNs), demonstrate strong predictive performance when using solar magnetograms, their scientific credibility is undermined by a lack of physical interpretability. Explainable artificial intelligence (XAI) offers a potential solution. However, current XAI studies in solar flare prediction are largely qualitative and lack systematic, theory-based, quantitative validation. We present a quantitative XAI framework that can decipher the physical basis of CNN-based solar flare prediction models. Using gradient-weighted class activation mapping (Grad-CAM), we identify model-focused regions (MFRs) in solar magnetograms. Then, we perform two key analyses to evaluate the predictive capability of magnetic parameters derived from MFRs and to quantitatively characterize their magnetic complexity. Our results reveal a strong physical correlation between MFRs and flare occurrence. Specifically, magnetic features extracted from MFRs demonstrate high predictive power for flares. Flare-producing active regions are characterized by magnetically complex configurations that are dominated by a single polarity rather than by balanced or purely unipolar structures. This finding is consistent with established physical theories of magnetic systems prone to flares. Our results suggest that CNNs can learn physically meaningful representations when trained on large-scale observations. Integrating XAI with quantitative magnetic field analysis improves the physical interpretability of deep learning-based flare prediction models, making them useful tools for prediction and modeling investigation in solar physics."
+  },
+  "1784808564.498049": {
+    "id": "2607.20160v1",
+    "title": "Relationship of ICME Composition Signatures with Solar Activity during 2009-2025",
+    "title_ja": "2009-2025年におけるICME組成シグネチャと太陽活動の関係",
+    "authors": [
+      "Diyorbek Pulatov",
+      "Zavkiddin Mirtoshev",
+      "Mirabbos Mirkamalov"
+    ],
+    "url": "http://arxiv.org/abs/2607.20160v1",
+    "summary_ja": "ACE衛星のSWICSデータを用い、惑星間空間コロナ質量放出(ICME)の鉄電荷状態や元素組成比と太陽黒点数の相関を統計的に解析した研究。CME・宇宙天気の観点でプロファイルと部分的に関連するが恒星フレア研究とは異なる。",
+    "abstract": "Coronal Mass Ejections (CMEs) are among the most energetic solar eruptions, expelling magnetized plasma from the corona into interplanetary space. Their interplanetary counterparts, known as Interplanetary Coronal Mass Ejections (ICMEs), retain distinct compositional signatures that reflect the physical conditions of their solar source regions. This study presents a statistical analysis of ICME composition dependence on solar activity during 2009--2025, covering Solar Cycle (SC) 24 and the ascending phase of SC~25 through its maximum, and compares the results with SC~23 studied by \\citet{Song+etal+2021}. Using data from the Solar Wind Ion Composition Spectrometer (SWICS) aboard the Advanced Composition Explorer (ACE), we examined the average iron charge state ($\\langle Q_{\\rm Fe}\\rangle$), ionic ratios (C$^{6+}$/C$^{5+}$ and O$^{7+}$/O$^{6+}$), and the elemental abundance ratio (Fe/O) for 307 ICMEs listed in the Richardson and Cane ICME catalog. The results show strong positive correlations of $\\langle Q_{\\rm Fe}\\rangle$ ($r$~=~0.86) and O$^{7+}$/O$^{6+}$ ($r$~=~0.85) with the annual sunspot number (SSN), whereas C$^{6+}$/C$^{5+}$ exhibits a weak correlation ($r$~=~0.17) primarily due to SWICS~2.0 upper-end saturation truncation that suppresses the solar maximum signal, and Fe/O a moderate correlation ($r$~=~0.57). The Fe/O ratio, a proxy for the First Ionization Potential (FIP) effect, displayed elevated values during the maxima of both SC~24 and SC~25, suggesting enhanced elemental fractionation during periods of increased magnetic activity. Comparing with SC~23, we find that the overall solar cycle dependence of ICME composition persists across cycles, though with notable quantitative differences attributed to the different magnetic activity levels between cycles. These findings confirm that ICME compositional signatures are strongly modulated by the solar cycle."
+  },
+  "1784808564.813739": {
+    "id": "2607.19812v1",
+    "title": "Origin of the Long-Period Radial Velocity Variation in the Red Supergiant HD 216946 (V424 Lac)",
+    "title_ja": "赤色超巨星HD216946(V424 Lac)における長周期視線速度変動の起源",
+    "authors": [
+      "Byeong-Cheol Lee",
+      "Myeong-Gu Park"
+    ],
+    "url": "http://arxiv.org/abs/2607.19812v1",
+    "summary_ja": "22年間の視線速度観測から赤色超巨星の1365日周期変動を検出し、線プロファイル変化や彩層活動指標との相関から彩層活動起源と結論づけた研究。視線速度変調・彩層活動という点でプロファイルと部分的に関連する。",
+    "abstract": "We present precise radial-velocity (RV) observations of the K-type red supergiant HD~216946 (V424 Lac) obtained over approximately 22 years with the Bohyunsan Optical Astronomy Observatory Echelle Spectrograph (BOES). The RV measurements reveal a significant long-period variability with a period of 1365 days. To investigate its origin, we analyzed the RV data together with line-profile variations (LPVs), chromospheric activity indicators, and published photometric variability. The LPVs exhibit periods of approximately 1370--1380 days, while the Na~D lines show a similar periodicity near 1355 days, both comparable to the RV period. In contrast, the H-line indicators display longer periods of 2730--2800 days, approximately twice the RV period. The close correspondence between the RV variations and the activity-related diagnostics strongly suggests that the 1365-day RV signal is primarily linked to chromospheric activity and extended atmospheric variability rather than arising from purely Keplerian motion. Published photometric studies also report additional long-period variability, including a 1601-day long secondary-period (LSP)-like variation. The coexistence of multiple non-identical periods indicates that the observed variability of HD~216946 is unlikely to originate from a single physical mechanism. We therefore interpret HD~216946 as a multiperiodic red supergiant in which several intrinsic stellar processes coexist. The observed variability is most likely dominated by chromospheric activity and large-scale atmospheric dynamics, possibly accompanied by rotational modulation and LSP-like variability, although the presence of a low-mass stellar companion cannot be completely excluded."
+  },
+  "1784808565.060999": {
+    "id": "2607.19784v1",
+    "title": "Metric Type II Radio Emission associated with Coronal Mass Ejections of Large Angular Widths: Some New Insights",
+    "title_ja": "大角度幅コロナ質量放出に伴うメートル波Type II電波放射:新たな知見",
+    "authors": [
+      "Mayank Rajput",
+      "Susanta Kumar Bisoi",
+      "Janardhan Padmanabhan"
+    ],
+    "url": "http://arxiv.org/abs/2607.19784v1",
+    "summary_ja": "CME駆動衝撃波によるType II電波バーストの周波数帯域幅とCMEの角度幅の相関を統計的に解析した太陽研究。CME・宇宙天気の観点でプロファイルと部分的に関連する。",
+    "abstract": "Solar Type II radio bursts are manifestations of shocks produced by explosive and eruptive solar activities, such as solar flares and coronal mass ejections (CMEs). Metric range or coronal Type II bursts are interesting because of their association with CME-driven shocks. It is therefore important to examine the correlation between the properties of Type II bursts and the associated CMEs. This, in turn, would be useful in understanding the impact of CMEs on space weather and geomagnetic activity. We conducted a statistical study of 23 coronal Type II radio bursts in the frequency range 150-20 MHz, for the period spanning 2007-2024. We correlated the frequency bandwidth of coronal Type II bursts with the angular width of the associated CMEs. Our investigation showed an anti-correlation between the two quantities with a correlation coefficient of $\\approx$ -0.62. We further deduced the height of the Type II bursts (r$_{Type II}$) at the onset time of the burst and compared them with the estimated height of the associated CMEs/shocks (r$_{CME}$). With the exception of one event, for the rest of the Type II burst events, r$_{Type II}$ was $<$ r$_{CME}$. The results suggest that the CMEs with large angular widths produce narrow-band Type II emissions, and these Type II emissions could possibly be produced in the flank region of the CME-driven shock rather than at the shock front."
+  },
+  "1784808565.365619": {
+    "id": "2607.19597v1",
+    "title": "重大フレア時の太陽EUV放射を予測する深層学習フレームワーク",
+    "title_ja": "重大フレア時の太陽EUV放射を予測する深層学習フレームワーク",
+    "authors": [
+      "Sathvik Soman",
+      "Jason T. L. Wang",
+      "Haimin Wang",
+      "Haodi Jiang"
+    ],
+    "url": "http://arxiv.org/abs/2607.19597v1",
+    "summary_ja": "SDOの多波長観測データを用い、大規模太陽フレア発生時のEUV放射(6.5nm)を3日先まで予測する深層学習モデルFlareEUVを提案。太陽フレア研究であり恒星フレアへの応用可能性はあるが直接の関連性は限定的。",
+    "abstract": "We present FlareEUV, a multimodal deep learning framework for predicting daily extreme ultraviolet (EUV) irradiance at 6.5 nm over three consecutive days during significant solar flares, using multi-instrument observations from NASA's Solar Dynamics Observatory (SDO). We consider 33 significant flares in the period between 2011 and 2014 in Solar Cycle 24. The SDO observations include 13 co-aligned full-disk images, comprising eight AIA EUV/UV and five HMI magnetic/continuum products. FlareEUV learns the relationship between magnetic structure and coronal emission from the raw imaging data using a lightweight attention-based architecture. Our experimental results demonstrate the good performance of FlareEUV in short-term EUV irradiance forecasting during the significant flares and its superiority over baseline methods."
+  },
+  "1784808565.684249": {
+    "id": "2607.18971v1",
+    "title": "太陽の局所・全球磁場がコロナ質量放出の個数・パラメータの中期予測に与える影響",
+    "title_ja": "太陽の局所・全球磁場がコロナ質量放出の個数・パラメータの中期予測に与える影響",
+    "authors": [
+      "Irina A. Bilenko"
+    ],
+    "url": "http://arxiv.org/abs/2607.18971v1",
+    "summary_ja": "太陽サイクル23-25のCME数・パラメータの周期変動を分析し、全球磁場に基づき今後のサイクルにおける強弱CME数を予測した研究。CMEというキーワードで関連するが対象は太陽で連星フレア研究とは異なる。",
+    "abstract": "A study of cyclic variations in the number and parameters of coronal mass ejections (CMEs) in cycles 23-25 demonstrates differences in the behavior of strong and weak CMEs. Strong CMEs, unlike weak CMEs, follow the cyclic evolution of active regions. A method for separately predicting strong and weak CMEs is proposed. Based on global magnetic field (GMF) parameters, the timing of the minima of cycles 26 and 27 (CR~2375$\\pm5$ and CR~2526$\\pm5$), the duration of cycle 26 (151~CRs or 11.2838 years), and the periods of dominance of the GMF sectorial structure in cycles 25 and 26 ($\\approx$CRs 2245-2355 and $\\approx$CRs~2395-2546) were determined. Assuming similarities between cycles 26 and 20, a Wolf number forecast was made for cycle 26, based on which the number of strong CMEs in cycles 25 and 26 was predicted. Based on the ratio of weak to strong CMEs in cycle 23, a forecast of weak CMEs in cycles 25 and 26 was made. A comparison of the predicted and observed CME parameters in cycle 25 shows good agreement."
+  },
+  "1784808565.991959": {
+    "id": "2607.17307v1",
+    "title": "Onboard catalog of known X-ray sources for EP-WXT",
+    "title_ja": "EP-WXTのための既知X線源オンボードカタログ",
+    "authors": [
+      "He-Yang Liu",
+      "Haiwu Pan",
+      "Yuan Liu",
+      "Hong-Bo Cai",
+      "Yuyin Tan",
+      "Haitao Xu",
+      "Changbin Xue",
+      "Xiaojin Sun",
+      "Yifan Chen",
+      "Zhiwei Cheng",
+      "Ying Li",
+      "Yulong Xue",
+      "Huaqing Cheng",
+      "Xuan Mao",
+      "Zhixing Ling",
+      "Chen Zhang",
+      "Weimin Yuan"
+    ],
+    "url": "http://arxiv.org/abs/2607.17307v1",
+    "summary_ja": "Einstein Probe搭載WXTのトリガーシステムに、ROSATやMAXIの情報と活動星フレア候補カタログを統合した9000天体のオンボードカタログを構築。MAXIによるフレアトリガー検出という観測手法と関連する。",
+    "abstract": "The Einstein Probe (EP) is dedicated to explore the dynamic X-ray universe and capture transient events in real time with its Wide-field X-ray Telescope (WXT). However, WXT's unprecedentedly large instantaneous field of view, exceeding 3,600 square degrees, simultaneously encompasses numerous known X-ray emitters. Distinguishing genuine novel transients from these persistent sources is a critical observational challenge. To resolve this, EP-WXT incorporates a dedicated reference catalog of known X-ray sources directly into its onboard data processing and triggering system. In this paper, we detail the compilation of this onboard catalog. By merging data from the ROSAT All Sky Survey, the MAXI source list, and a curated stellar flare candidate catalog, we constructed a robust baseline database of 9,000 sources. This catalog provides coordinates, baseline count rates, and spatial veto radii for exceptionally bright emitters. Real-time cross-matching against this database effectively decouples known background sources from the transient alert stream. Recent in-orbit operations validate the high stability and efficiency of this catalog-driven trigger system. Notably, the catalog successfully masked over 6,100 potential triggers from known active stars. This proves its essential role in ensuring EP's rapid and accurate response to genuine astrophysical discoveries."
+  },
+  "1784808566.256629": {
+    "id": "2607.15759v1",
+    "title": "Three-dimensional evolution of a solar filament with multipoint observations",
+    "title_ja": "多地点観測による太陽フィラメントの3次元進化",
+    "authors": [
+      "Qingmin Zhang",
+      "Jun Dai",
+      "Beili Ying",
+      "Ye Qiu",
+      "Li Feng",
+      "Chuan Li",
+      "Hongqiang Song",
+      "Yue Zhou",
+      "Zongyi Li"
+    ],
+    "url": "http://arxiv.org/abs/2607.15759v1",
+    "summary_ja": "地球・STEREO・Solar Orbiterの多視点観測でフレアに伴うフィラメント噴出とCMEの3次元形状・速度を再構成した研究で、CME・宇宙天気の観点でプロファイルと部分的に関連する。",
+    "abstract": "In this paper, we first devise a geometrical model, featuring a torus-like flux rope based on the shape of 3DCORE model. The global shape of the torus is an ellipse, while the cross sections are circular along the torus. The thinnest point is located between the Sun center and photosphere. Deflections and inclination are considered as well. Using multiwavelength observations from perspectives of Earth, Ahead-STEREO (STA), and Solar Orbiter, we apply the model to three-dimensional (3D) reconstructions and tracking of the filament eruption, which was associated with a flare and a coronal mass ejection (CME) on 2024 October 8. The morphology, direction, and true velocity ($\\sim$433 km/s) of the eruptive filament are obtained. It is found that the filament propagates nonradially, deflecting slightly eastward by $\\sim$10 degrees and significantly southward by $\\sim$40 degrees. Trajectory of the filament in the ecliptic plane reveals that the filament moves toward STA. The true direction of the eruptive filament using imaging and spectral observations is mutually verified by 3D reconstructions. The heliocentric distance of the filament increases from $\\sim$1.68 to $\\sim$2.94 solar radii within 35 minutes. Based on the results of 3D reconstructions, the true speed of the CME leading edge is evaluated to be 1046$-$1145 km/s."
+  },
+  "1784808566.577519": {
+    "id": "2607.20052v1",
+    "title": "Height Dependent Phase Shifts of Wave Pulses in the Lower Solar Atmosphere Measured with SUNRISE III",
+    "title_ja": "SUNRISE IIIで測定した太陽下層大気における波動パルスの高度依存位相シフト",
+    "authors": [
+      "Andreas Lagg",
+      "H. N. Smitha",
+      "Sami K. Solanki",
+      "Tino L. Riethmüller",
+      "Achim Gandorfer",
+      "Alex Feller",
+      "Francisco A. Iglesias",
+      "Azaymi L. Siu-Tapia",
+      "Jose Carlos del Toro Iniesta",
+      "Yukio Katsukawa",
+      "Pietro Bernasconi",
+      "Thomas Berkefeld",
+      "Masahito Kubo",
+      "David Orozco Suárez",
+      "Robert Cameron",
+      "Jesper Schou",
+      "Damien Przybylski",
+      "Alberto Álvarez-Herrero",
+      "Bianca Grauf",
+      "Michael Carpenter",
+      "Alexander Bell",
+      "Valentín Martínez Pillet",
+      "Shahin Jafarzadeh",
+      "Lakshmi Pradeep Chitta",
+      "Francisco Javier Bailén",
+      "Julian Blanco Rodríguez",
+      "Juan Sebastián Castellanos Durán",
+      "Edvarda Harnes",
+      "Johannes Hölken",
+      "Ryohtaroh T. Ishikawa",
+      "Yusuke Kawabata",
+      "Takuma Matsumoto",
+      "Takayoshi Oba",
+      "Hanna Strecker",
+      "Dušan Vukadinović"
+    ],
+    "url": "http://arxiv.org/abs/2607.20052v1",
+    "summary_ja": "バルーン搭載望遠鏡SUNRISE IIIの分光偏光観測でCa II H線周辺の複数スペクトル線を用い、太陽下層大気を伝播する波動パルスの高度依存時間遅れを測定した研究。彩層観測手法はプロファイルと関連するがフレアやRS CVn連星は扱っていない。",
+    "abstract": "We report on the measurement of the height-dependent time shifts of wave pulses in the lower solar atmosphere from high-resolution spectro-polarimetric observations obtained with the SUSI instrument on board the SUNRISE III balloon-borne solar observatory during its successful science flight in July 2024. The line-of-sight velocities derived from the line-core positions of 19 spectral lines in a 2 nm-wide window around the Ca II H line were used to determine the time shifts of propagating pulses at their respective formation heights. Our analysis reveals that these shifts are roughly ordered according to the computed formation heights of the respective spectral lines. A statistical analysis of the time shifts using sit-and-stare observations with a total duration of one hour reveals that wave pulses propagating upwards from near the solar surface to heights of approximately 500-700 km are most common, with average time lags of 20 s to 30 s between these heights. Also present are pulses with close-to-zero phase shifts, predominantly above intergranular lanes and areas of enhanced magnetic activity. Additionally, downward propagating wave pulses with negative time lags of 10 s to 15 s are seen, mostly above areas of enhanced magnetic activity. A common feature of all the observed pulses is that in the lower 250 km they show small time lags of zero to a few seconds, and only at higher layers do the propagating pulses become more dominant. This study demonstrates the potential of the many-line approach for investigating the height dependence of the physical conditions in the solar atmosphere."
+  },
+  "1784808566.834129": {
+    "id": "2607.19978v1",
+    "title": "Oscillatory reconnection and resonant response to wave excitation in 2D coronal null points",
+    "title_ja": "2次元コロナヌル点における振動的磁気リコネクションと波動励起への共鳴応答",
+    "authors": [
+      "Konstantinos Karampelas",
+      "Tom Van Doorsselaere"
+    ],
+    "url": "http://arxiv.org/abs/2607.19978v1",
+    "summary_ja": "太陽コロナのヌル点における磁気リコネクションと波動生成の関係をMHDシミュレーションで調べ、準周期的高速伝播波との関連を議論した研究。フレアに関連する磁気リコネクション物理はプロファイルと部分的に重なる。",
+    "abstract": "Null points are magnetic field singularities, where the magnetic field strength rapidly drops to zero. In the solar atmosphere, null points are known sites of magnetic reconnection and wave generation and are associated with highly energetic phenomena, such as flares. The aim of this study is to explore the connection between the properties of oscillatory reconnection at null points and the latter's nature as resonant cavities for waves. We perform a set of 2D and 2.5D magnetohydrodynamics simulations of single null points in a stratified solar atmosphere, using the PLUTO code. We perturb each null point through a single propagating pulse and its reflections from the bottom boundary, hitting the null point in an asymmetrical fashion. This leads to both periodic reconnection events and wave refraction around the null point. We find that each null point imposes frequencies on the reconnection matching those of the waves generated from the individual resonant cavity. These frequencies also differ from those excited by the low frequency driver of the reflected waves returning to the null point, the latter lying outside the $95\\%$ confidence interval. As such, excited periodic reconnection can be characterised as oscillatory reconnection, i.e. with properties intrinsic to the null points. Finally, the generated waves at the null propagate across the domain, reminiscent of the observed quasi-periodic fast-propagating waves. We provide results showing a direct connection between oscillatory reconnection and the generated high-frequency wavetrains at null points in the solar corona. The propagating waves generated at the resonant cavity, reminiscent of the observed quasi-periodic fast-propagating waves can provide us a diagnostic tool for the reconnection process at the null point and the coronal plasma conditions."
+  },
+  "1784808567.171319": {
+    "id": "2607.19775v1",
+    "title": "A Search for Exoplanets around Northern Circumpolar Stars X. The origin of radial velocity variations in the evolved star HD 216595",
+    "title_ja": "北天周極星の系外惑星探索X:進化した星HD216595における視線速度変動の起源",
+    "authors": [
+      "Sang-Hee Kim",
+      "Byeong-Cheol Lee",
+      "Shenghong Gu",
+      "Jae-Rim Koo",
+      "Beomdu Lim",
+      "Myeong-Gu Park",
+      "Huan-Yu Teng",
+      "Yeon-Ho Choi",
+      "David Mkrtichian",
+      "Tae-Yang Bang",
+      "Hyeong-Ill Oh",
+      "Heon-Young Chang"
+    ],
+    "url": "http://arxiv.org/abs/2607.19775v1",
+    "summary_ja": "AGB星HD216595の16年間の視線速度観測で567日周期を検出し、恒星活動指標との相関からKeplerian起源か恒星固有変動かを議論した研究。視線速度変調の手法はプロファイルと部分的に関連する。",
+    "abstract": "Detecting planetary companions around evolved stars, particularly asymptotic giant branch (AGB) stars, is challenging due to intrinsic stellar variability such as surface convection, pulsations, and mass loss, which can produce radial velocity (RV) signals that mimic Keplerian motion. We investigate the origin of long-period, low-amplitude RV variations observed in the AGB star HD 216595 based on high-resolution spectroscopic data spanning approximately 16 years obtained with the Bohyunsan Optical Astronomy Observatory Echelle Spectrograph (BOES) and the Las Cumbres Observatory Network of Robotic Echelle Spectrographs (NRES) instruments. The RV measurements reveal a statistically significant periodic signal at 567 days that can be described by a Keplerian model consistent with a substellar companion. However, no strong correlations are found between the RV variations and stellar activity indicators, including line bisectors, chromospheric activity, and photometric variability, although weak signals at similar timescales are present in some diagnostics. Given the stellar properties of HD 216595 and similarities to previously reported cases, the observed RV variations are likely related to intrinsic stellar processes, although a companion-induced origin cannot be definitively ruled out. Further progress will require improved diagnostics and more sophisticated modeling to disentangle stellar variability from genuine orbital signals."
+  },
+  "1784808567.426639": {
+    "id": "2607.19225v1",
+    "title": "三次元フォワードモデリングによる太陽コロナ加熱理論の検証",
+    "title_ja": "三次元フォワードモデリングによる太陽コロナ加熱理論の検証",
+    "authors": [
+      "Steven R. Cranmer",
+      "Chris R. Gilly"
+    ],
+    "url": "http://arxiv.org/abs/2607.19225v1",
+    "summary_ja": "太陽コロナループの三次元モデルを構築し、様々な加熱理論(波動散逸・磁気リコネクション等)をSDO・Hinodeデータと比較して最適なパラメータを特定した研究。太陽物理ではあるがフレア・Hα研究との直接関連は薄い。",
+    "abstract": "After almost a century of speculation, the physical processes responsible for heating the Sun's corona remain uncertain. Observations of coronal loops at extreme ultraviolet and X-ray wavelengths have provided substantial insights, such as the constraint that heating rates increase monotonically with local magnetic field strength. However, there remain dozens of competing suggestions for detailed theoretical explanations of the heating. There remains a need to compare the predictions of these theories with one another, and with real data, so the most likely mechanisms can be determined. In this paper, we build three-dimensional simulations of the corona by starting with potential-field extrapolations for the magnetic field, filling in plasma densities and temperatures along individual loops using one-dimensional models, then computing optically thin intensities for comparison with data from the Solar Dynamics Observatory and Hinode. One new aspect of this forward modeling is the use of parameterizations for heating that include a wide variety of processes such as wave dissipation, reconnection, nanoflares, and turbulent cascade. We also include the effects of intermittent heating and cooling along unresolved strands in the form of time-averaged multithermal broadening of the local differential emission measure. After allowing the coronal heating prescription to vary freely, we found a narrow range of parameters that produce optimal agreement with a set of more than 500 independently measured intensities at solar minimum and maximum. The values of these parameters are consistent with those predicted by models of imbalanced magnetohydrodynamic turbulence, but this does not necessarily exclude contributions from other heating processes."
+  },
+  "1784808567.735309": {
+    "id": "2607.17971v1",
+    "title": "The Complete Catalog of Gamma-Ray Transients Observed by GRBAlpha & VZLUSAT-2 CubeSat Missions",
+    "title_ja": "GRBAlpha・VZLUSAT-2 CubeSatミッションが観測したガンマ線突発天体の完全カタログ",
+    "authors": [
+      "Marianna Dafcikova",
+      "Jakub Ripa",
+      "Andras Pal",
+      "Norbert Werner",
+      "Michaela Duriskova",
+      "Yasushi Fukazawa",
+      "Martin Kolar",
+      "Laszlo Meszaros",
+      "Filip Munz",
+      "Masanori Ohno",
+      "Lea Szakszonova",
+      "Hiromitsu Takahashi",
+      "Masato Yokota",
+      "Jean-Paul Breuer",
+      "Hsiang-Kuang Chang",
+      "Balazs Csak",
+      "Vladimir Daniel",
+      "Juraj Dudas",
+      "Marcel Frajt",
+      "Gabor Galgoczi",
+      "Peter Hanak",
+      "Filip Hroch",
+      "Chin-Ping Hu",
+      "Jan Hudec",
+      "Nikola Husarikova",
+      "Yuto Ichinohe",
+      "Jakub Kapus",
+      "Miroslav Kasal",
+      "Martin Koleda",
+      "Robert Laszlo",
+      "Chih-Hsun Lin",
+      "Tsung-Che Liu",
+      "Tsunefumi Mizuno",
+      "Kazuhiro Nakazawa",
+      "Hirokazu Odaka",
+      "Michal Pazderka",
+      "Ales Povalac",
+      "Maksim Rezenov",
+      "Martin Sabol",
+      "Kaustubha Sen",
+      "Miroslav Smelko",
+      "Petr Svoboda",
+      "Martin Topinka",
+      "Che-Chih Tsao",
+      "Tomas Urbanec",
+      "Ivo Vertat",
+      "Tomas Vitek",
+      "Chih-En Wu"
+    ],
+    "url": "http://arxiv.org/abs/2607.17971v1",
+    "summary_ja": "小型CubeSat 2機による4年間の観測で300超のガンマ線突発天体（GRB、太陽フレア、軟ガンマ線リピーター等）を検出したカタログ。太陽フレア検出を含むがRS CVn型フレア研究とは異なる。",
+    "abstract": "We present the largest sample of gamma-ray transients observed by any CubeSat mission so far. Observations were acquired by a 1U CubeSat GRBAlpha, the smallest astrophysical space observatory, and a 3U CubeSat VZLUSAT-2. Both missions were technological pathfinders and carried a novel CsI scintillator-based detector read-out by silicon photomultipliers. They operated on Sun-synchronous low Earth orbits below 550 km for about four years; GRBAlpha between March 2021 and June 2025 while VZLUSAT-2 between January 2022 and November 2025. Despite being technological experiments, they observed over 300 gamma-ray transients including gamma-ray bursts (GRBs), solar flares, soft gamma repeaters and one outburst from an X-ray binary. Among these are the two brightest GRBs ever observed, GRB 221009A and GRB 230307A, without saturation and GRBs at redshifts up to z=4.2. GRBAlpha also contributed to the InterPlanetary Network. Regular monitoring of transients was demonstrated by a detection rate of two transients or one GRB a week and the shortest time between two subsequent detections of only 42 minutes. We show that a constellation of nanosatellites around the Earth would observe at least 60% of Fermi/GBM GRBs with 5$σ$ significance and over 90% at 3$σ$ level. GRBAlpha and VZLUSAT-2 prove that routine monitoring of the gamma-ray sky can also be done by low-cost and quickly developed nanosatellite missions."
+  },
+  "1784808568.050889": {
+    "id": "2607.17881v2",
+    "title": "Solar, Heliospheric and Ionospheric Physics: Pathfinders, Precursors and SKAO Perspective",
+    "title_ja": "太陽・太陽圏・電離圏物理学：パスファインダー、先行研究、SKAOの展望",
+    "authors": [
+      "Pietro Zucca",
+      "Rohit Sharma",
+      "Divya Oberoi",
+      "Eduard Kontar",
+      "John Morgan",
+      "Peter Gallagher",
+      "Sven Wedemeyer",
+      "Biagio Forte"
+    ],
+    "url": "http://arxiv.org/abs/2607.17881v2",
+    "summary_ja": "SKAOによる太陽コロナ加熱、CME、太陽風乱流、恒星-太陽活動関連などを概観するレビュー章。太陽フレア・宇宙天気の話題を含み本プロファイルと中間程度関連する。",
+    "abstract": "The Solar, Heliospheric and Ionospheric (SHI) Physics Science Working Group of the Square Kilometre Array Observatory (SKAO) addresses the full chain of plasma processes linking the solar corona to the terrestrial environment. This overview chapter synthesises 16 topical contributions to Advancing Astrophysics with the SKA-II, spanning the quiet and active solar atmosphere, eruptive phenomena, heliospheric turbulence and solar-wind diagnostics, ionospheric science, stellar-solar connections, and the observational frameworks required to deliver these science goals. The primary focus is on the capabilities of Array Assembly 4 (AA4), the design baseline for both SKA-LOW (50-350,MHz) and SKA-MID (0.35-15.4,GHz), which together provide continuous spectral coverage, sub-arcsecond angular resolution, full-Stokes polarimetry, and sensitivity gains of an order of magnitude over existing facilities. From resolving fine-scale coronal heating events to mapping coronal mass ejection magnetic fields and characterising multi-scale heliospheric turbulence, SKAO will deliver transformative advances in solar and space-weather science. We frame these contributions as a single end-to-end Sun-to-Earth system. We identify cross-cutting themes and gaps not fully addressed by individual chapters and outline the staged roadmap from early operations through to the full AA4 capability."
+  },
+  "1784808568.304809": {
+    "id": "2607.17685v1",
+    "title": "Sloshing Oscillations in coronal loops excited by successive M- and C-Class flares",
+    "title_ja": "M・Cクラスフレアで励起されたコロナループのスロッシング振動",
+    "authors": [
+      "Hitesh Paliwal",
+      "S. Krishna Prasad",
+      "M. V. Sunil Krishna"
+    ],
+    "url": "http://arxiv.org/abs/2607.17685v1",
+    "summary_ja": "SDO/AIAデータを用い、太陽フレアで誘起されたコロナループのスロッシング振動15例を解析し、フレア強度と振動特性の関係を調べた。太陽フレア研究であり恒星フレアへの直接応用はないが、関連分野。",
+    "abstract": "Slow magnetoacoustic waves in hot coronal loops have remained a topic of considerable interest and debate over the past two decades. The periodic back-and-forth motion of plasma within a coronal loop, often initiated by a flare, is commonly referred to as sloshing oscillation. In the present study, we report unprecedented observations of sloshing oscillations in coronal loops excited by successive M- and C-class flares, using data from the Atmospheric Imaging Assembly (AIA) onboard the Solar Dynamics Observatory (SDO). A total of fifteen oscillation events were identified within seven distinct coronal loops, providing the rare opportunity to evaluate the influence of flare strength on the characteristics of the oscillations. Based on the appearance of the oscillations, their properties were extracted mainly from the AIA 131 and 94 Å channels. Additionally, we estimate the deprojected length of each loop by assuming a semi-circular geometry. Our results indicate considerable changes in the properties of oscillations from one flare to another, suggesting the role of individual flares in shaping the local physical conditions. The plasma temperature estimated from the loop length and oscillation period ranges from 9 to 31 MK. Additionally, we find that the damping times are not always longer in the colder 94 Å channel as previously observed. By combining the results obtained from all events, we study the inter-dependences between various parameters, including oscillation period, damping time, loop length, and plasma temperature, and discuss these results in the context of the theory of slow waves."
+  },
+  "1784808568.623279": {
+    "id": "2607.17682v1",
+    "title": "Dual-Perspective Microwave and Hard X-ray Constraints of Asymmetric Nonthermal Loops in an X-class Flare",
+    "title_ja": "Xクラスフレアにおける非対称非熱的ループのマイクロ波・硬X線二視点制約",
+    "authors": [
+      "Ruifei Huang",
+      "Yao Chen",
+      "Victor Melnikov",
+      "Alexey Kuznetsov",
+      "Zhao Wu",
+      "Dmitriy Smirnov",
+      "Sergey Anfinogentov",
+      "Feiyu Yu",
+      "Xiangliang Kong",
+      "Ze Zhong",
+      "Mingzhe Guo",
+      "Hao Ning"
+    ],
+    "url": "http://arxiv.org/abs/2607.17682v1",
+    "summary_ja": "地球視点とSolar Orbiter視点の二方向観測でXクラス太陽フレアの非熱的ループを解析し、エネルギー依存の電子トラップ・降着過程を明らかにした。多波長フォローアップという手法は共通するが太陽対象の研究。",
+    "abstract": "We report dual-perspective microwave and HXR observations of an X-class flare on 2024 May 15, taking advantage of the unique geometry of a front-side view from the Earth and a back-side perspective from the Solar Orbiter (SolO). Using spatially resolved imaging spectroscopy from Siberian Radioheliograph (SRH) together with Chashan Broadband Solar millimeter spectrometer (CBSmm) and STIX data, we identify a set of nonthermal flaring loops in an asymmetric magnetic field, with microwave sources located near the loop top and HXR sources associated with the southern footpoint. Compared with HXR, the microwave emission shows an opposite ascending trend, an increasing time lag in time profile, and a distinctive ``SHH'' spectral pattern, which we attribute to energy-dependent trapping and precipitation of energetic electrons in an asymmetric magnetic configuration. Flux pulsations and their spectral and polarization signatures are consistent with intermittent particle acceleration rather than MHD wave modulation. Microwave magnetic diagnostics, corroborated by non-linear force free field (NLFFF) extrapolation, provide key constraints on the three-dimensional magnetic configuration. The dual-perspective flux profile comparison and consistent QPP signatures across wavelengths together support a self-consistent picture of energy-dependent electron trapping, precipitation, and transport in these asymmetric loops."
+  },
+  "1784808568.941329": {
+    "id": "2607.17650v2",
+    "title": "CW Cas: A solar-type contact binary system with an unseen third companion in a hierarchical quadruple system",
+    "title_ja": "CW Cas:階層四重星系における未検出の第三伴星を持つ太陽型接触連星",
+    "authors": [
+      "Azizbek Matekov",
+      "Liying Zhu",
+      "Linjia Li",
+      "Fangbin Meng",
+      "Nianping Liu",
+      "ShengBang Qian",
+      "Ergang Zhao",
+      "Mikhail Kovalev",
+      "Jiangjiao Wang",
+      "Yufei Chen",
+      "Aktam Hafizov",
+      "Soonthornthum Boonrucksar",
+      "Somsawat Rattanasoon",
+      "Shuhrat Ehgamberdiev"
+    ],
+    "url": "http://arxiv.org/abs/2607.17650v2",
+    "summary_ja": "測光・分光観測からG型接触連星CW Casの質量比・黒点活動周期・軌道周期変化を求め、コンパクト天体を含む階層四重星系であることを示した。近接連星の恒星活動研究として一部関連。",
+    "abstract": "We present a comprehensive multiband photometric and spectroscopic study of the G-type binary CW Cas whose parameters have not been well determined. Our double-lined spectroscopic radial velocity curve of this system yields a reliable mass ratio of $q = 1.88(9)$. By combining $BVR_{c}I_{c}$ bands, TESS light curves and radial velocity curves, we found that CW Cas is a W-subtype shallow contact binary with a fill-out factor of 15\\%. The components have masses of $0.98(6)M_{\\odot}$ and $0.52(4)M_{\\odot}$, separated by $2.25(5)R_{\\odot}$. A notable asymmetry in the maxima of the light curves was detected and explained by a dark spot located on the surface of at least one component. Comparison of light curves from different years revealed that these dark spot activities exhibit cyclic variations with an approximate period of 1250 days. Orbital period analysis via O-C diagram spanning 125 years shows a long-term decrease superimposed with periodic oscillation caused by the light-travel-time effect (LTTE) due to a third body. This tertiary component has an orbital period of $P_{3} = 99.4(6)$ years and a minimal mass of $M_{3}=0.91(1)M_{\\odot}$. The absence of detectable signatures for this massive object in either spectroscopic or photometric datasets implies it must be a compact object such as a white dwarf or neutron star. Furthermore, a visual companion was identified based on Gaia DR3 astrometric data, suggesting that CW Cas is part of a hierarchical quadruple system. As such, CW Cas represents a valuable laboratory for probing 2+1+1 hierarchical multiple system hosting compact object."
+  },
+  "1784808569.201039": {
+    "id": "2607.17552v1",
+    "title": "First double red giant Algol system with active mass transfer",
+    "title_ja": "活発な質量輸送を伴う初の二重赤色巨星アルゴル型連星",
+    "authors": [
+      "Mikhail Kovalev",
+      "Hailiang Chen",
+      "Sufen Guo",
+      "Jiao Li",
+      "Hongwei Ge",
+      "Dengkai Jiang",
+      "Marina Burlak",
+      "Natalia Ikonnikova",
+      "Xuefei Chen",
+      "Zhanwen Han"
+    ],
+    "url": "http://arxiv.org/abs/2607.17552v1",
+    "summary_ja": "二つの赤色巨星からなる半分離型連星を発見し、Hα輝線から質量放出の兆候を確認、共通外層進化直前の稀な段階と結論。近接連星系という点で一部関連するがフレア研究ではない。",
+    "abstract": "Double red giant stars are very important for studies of the stability of mass transfer, common-envelope evolution, and the formation of double white dwarfs with short orbital periods. However, no double red giant system undergoing mass transfer has yet been found. We present the discovery of a close Algol-type binary system composed of two red giant stars. This is the first known semi-detached system observed during the very short phase when the accretor has expanded into a red giant just before entering the common envelope phase. The $H_α$ line suggests that the system has recently lost some material, which is now moving toward us. We present a consistent analysis of all the available spectroscopic and photometric observations of this system, constraining its orbital parameters and the fundamental properties of the components. Our findings are supported by a binary evolution model that successfully reproduces the currently observed parameters. The model suggests that the system will eventually merge into a single star."
+  },
+  "1784808569.511399": {
+    "id": "2607.16923v1",
+    "title": "Continuous Ultra-Low-Frequency Solar Radio Monitoring with ALBATROS from the High Arctic",
+    "title_ja": "北極圏からのALBATROSによる連続超低周波太陽電波モニタリング",
+    "authors": [
+      "Aman Chokshi",
+      "Mohan Agrawal",
+      "Christopher Barbarie",
+      "Joëlle-Marie Bégin",
+      "Benjamin Cheung",
+      "Hsin Cynthia Chiang",
+      "Cherie K. Day",
+      "Eamon Egan",
+      "Stephen Fay",
+      "Nivek Ghazi",
+      "Maya Goss",
+      "Lawrence Herman",
+      "Jack Hickish",
+      "Michael Hétu",
+      "Ronniy Joseph",
+      "Marc-Olivier R. Lalonde",
+      "Tristan Ménard",
+      "John Orlowski-Scherer",
+      "Jonathan Sievers",
+      "Will Tyndall",
+      "Anthony B. Zerafa"
+    ],
+    "url": "http://arxiv.org/abs/2607.16923v1",
+    "summary_ja": "北極圏の連続日照を活用し1-125MHzの太陽電波バーストを検出、軟X線と強い時間相関を確認。太陽の宇宙天気モニタリングだが、RS CVn型連星やHα観測とは無関係。",
+    "abstract": "In the Canadian High Arctic, nearly five months of continuous daylight enable uninterrupted low-frequency solar monitoring. We present the first solar science results from the Array of Long Baseline Antennas for Taking Radio Observations from Seventy-Ninth Parallel (ALBATROS). This broadband radio array is designed to explore the largely uncharted radio sky below 30 MHz, where polar ionospheric conditions permit access to frequencies rarely accessible from ground-based sites. Using observations spanning 1-125 MHz, we detect bright solar radio bursts exhibiting complex spectral and polarised structure. The bursts are observed simultaneously by all eight autonomous stations, demonstrating the stability and consistency of the array. Comparison with concurrent soft X-ray measurements reveals a strong temporal correlation between the radio and X-ray emission. These observations establish ALBATROS as a new facility for ultra-low-frequency solar monitoring, opening a new window on solar radio bursts, space weather, and the dynamic heliosphere."
+  },
+  "1784808569.769299": {
+    "id": "2607.16585v1",
+    "title": "Effective temperatures estimation of low-mass stars and identification of T Tauri stars in LAMOST DR10 using machine learning",
+    "title_ja": "機械学習を用いたLAMOST DR10における低質量星の有効温度推定とTタウリ星の同定",
+    "authors": [
+      "C. D. Millan-Valderrama",
+      "J. Hernandez",
+      "B. Sabogal",
+      "J. Muñoz"
+    ],
+    "url": "http://arxiv.org/abs/2607.16585v1",
+    "summary_ja": "LAMOST分光データからHα等HαやLiI等の指標を自動測定し、機械学習で低質量星の有効温度推定とTタウリ星候補の同定を実施。Hα診断の手法面で部分的関連があるがフレア研究ではない。",
+    "abstract": "We present effective temperature (Teff) estimates of low-mass stars and T Tauri stars (TTS) candidate detections derived from automated spectroscopic measurements and low-complexity machine-learning models applied to the LAMOST DR10 V2 survey. Equivalent widths of key diagnostic spectral features, including the atomic lines Halpha, LiI 6708 AA and TiO/VO molecular bands, are automatically measured for all stars within 1 kpc observed by LAMOST. Using nine spectral features as inputs, we train a Gradient Boosting Machine tree-based regression model, calibrated with synthetic spectra from the PHOENIX library, to predict Teff over the range 2,500 - 5,100 K. We apply a logistic regression model to the principal components derived from the measured spectral features, enabling efficient identification of TTS candidates. Both models exhibit strong performance in validation tests. Finally, a Monte Carlo framework is employed to propagate input uncertainties and estimate Teff and its associated uncertainties for low-mass stars from 1,733,802 spectra and to identify 2,534 candidate TTS from 3,121 spectra."
+  },
+  "1784808570.088339": {
+    "id": "2607.16160v1",
+    "title": "SEP-PRISM Data: A multi-source dataset for solar energetic particle forecasting",
+    "title_ja": "SEP-PRISMデータ:太陽高エネルギー粒子予測のためのマルチソースデータセット",
+    "authors": [
+      "Yian Yu",
+      "Yang Chen",
+      "Lulu Zhao",
+      "Kathryn Whitman",
+      "Ward Manchester",
+      "Tamas Gombosi"
+    ],
+    "url": "http://arxiv.org/abs/2607.16160v1",
+    "summary_ja": "フレア記録・活動領域磁場・CMEカタログ・GOES軟X線などを統合した太陽高エネルギー粒子予測用データセットを構築。宇宙天気予測研究で太陽フレアと関連するがRS CVn連星やHα観測とは異なる。",
+    "abstract": "Solar energetic particle (SEP) event forecasting often involves integrating heterogeneous observations that differ in cadence, temporal coverage, format, and historical availability, posing challenges for reproducible analysis of data-driven approaches. This paper presents SEP-PRISM Data, a curated multi-source dataset designed for 24-hour ahead forecasting of operational SEP events, defined by proton flux exceeding 10 pfu in the GOES > 10 MeV channel. SEP-PRISM Data integrates flare records, active-region magnetic field parameters, coronal mass ejection (CME) catalogue data, GOES soft X-ray flux, and historical proton flux into a common window-based representation spanning 3 February 1986 to 10 September 2025. To improve temporal coverage and cross-source consistency, SHARP and SMARP magnetic products were aligned into a unified SMHARP archive, and CME records from DONKI and CDAW were aligned into a unified CDAWDONKI event set. Predictor variables were summarized over fixed non-overlapping 24-hour historical windows using minimum, mean, and maximum statistics and paired with targets defined over the subsequent 24-hour window, forming a supervised learning dataset. The resulting SEP-PRISM Data contains 14,464 labeled samples, including 650 positive operational SEP cases, and is intended to support reproducible benchmarking, model development, feature analysis, and future studies of space weather forecasting."
+  },
+  "1784808570.397939": {
+    "id": "2607.15859v1",
+    "title": "Solar Cycle Variation of the Distribution of Photospheric Magnetic Flux Features",
+    "title_ja": "光球面磁束特徴の分布の太陽周期変動",
+    "authors": [
+      "Callan N. Noble",
+      "Clare E. Parnell",
+      "Thomas Neukirch"
+    ],
+    "url": "http://arxiv.org/abs/2607.15859v1",
+    "summary_ja": "SDO/HMIデータを用いて太陽黒点磁束の確率分布関数が太陽周期でどう変化するかを統計的に調べた研究で、太陽磁場生成機構への示唆はあるがフレア観測研究への直接的関連は薄い。",
+    "abstract": "We use statistical tools to analyse data from the Solar Dynamics Observatory Helioseismic and Magnetic Imager to determine the distribution of the magnetic flux of photospheric magnetic features and its variation over a full solar cycle. In particular, we use statistical figures of merit to test how well different types of probability density function represent the magnetic flux distribution inferred from the data and how their shape changes over the solar cycle. Our analysis shows that a double power law provides the best representation of the data over the full solar cycle and we present the dependence of the power law exponents on the phase of the solar cycle. The nature of the observed flux distributions at different times during the solar cycle is significant because it could be used to try and infer information about solar magnetic field generation mechanisms. We discuss potential implications of a double power law distribution for solar magnetic field generation."
+  },
+  "1784808570.637249": {
+    "id": "2607.15540v1",
+    "title": "Investigation of projected rotational velocities of Be-type stars in LAMOST DR7",
+    "title_ja": "LAMOST DR7におけるBe型星の投影自転速度の研究",
+    "authors": [
+      "Zhicun Liu",
+      "Jiao Li",
+      "Jiaming Liu",
+      "Xiao-Long Wang",
+      "Guozhen Hu",
+      "Wenyuan Cui"
+    ],
+    "url": "http://arxiv.org/abs/2607.15540v1",
+    "summary_ja": "LAMOST分光データからBe型星479個のvsiniをフーリエ変換法で導出し、Hα輝線形状(単峰・双峰)との相関を調べた研究で、Hα輝線プロファイル解析という手法は共通するがフレア研究とは目的が異なる。",
+    "abstract": "Stellar rotation plays a key role in the transfer of angular momentum, and a large sample of Be-type stars with reliable projected rotational velocities is crucial for understanding their formation and evolution. In this work, we derive the projected rotational velocities ($v$\\,sin\\,$i$) of 479 Be-type stars using the Fourier transform method, based on their LAMOST Medium-resolution Survey (MRS) spectra. Our results suggest that the Fourier transform method can provide reliable $v$\\,sin\\,$i$ values for Be-type stars by analyzing the \\ion{He}{1}\\,lines at 4922, 5015, 5047, and 6678 \\,Åin their LAMOST MRS spectra. A K-S test indicates that Be-type stars with different H$α$ emission line morphologies exhibit different $v$\\,sin\\,$i$ distributions, and Be-type stars with double-peaked emission have a higher fraction of rapid rotators than those with single-peak emission. The $v$\\,sin\\,$i$ distributions of our Be-type stars in the field, OB associations, and clusters show no significant differences. The deconvolved $v$\\,sin\\,$i$ distribution of our entire Be-type star sample does not exhibit a bimodal distribution but rather a single peak at $v\\approx260$\\,km$\\cdot$s$^{-1}$. Based on the analysis of 105 stars in our sample, we find that the mean equatorial rotational velocity is 0.74 times the critical velocity. Furthermore, we investigate the relationship between $v$\\,sin\\,$i$ and the H$α$ peak separation velocity for Be-type stars exhibiting double-peak H$α$ emission lines, using Pearson and Spearman rank correlation coefficients."
+  },
+  "1784808570.944789": {
+    "id": "2607.15245v1",
+    "title": "When will T Coronae Borealis next erupt as a nova? Constraints from recurrence, orbital phase, and accretion-state evolution",
+    "title_ja": "再帰新星T CrBの次回爆発時期はいつか:再帰周期・軌道位相・降着状態進化からの制約",
+    "authors": [
+      "Songpeng Pei",
+      "Xiaowan Zhang",
+      "Renzhi Su",
+      "Ziwei Ou",
+      "Yongzhi Cai",
+      "Qiang Li",
+      "Yu Liu",
+      "Xiaoqin Ren",
+      "Taozhi Yang"
+    ],
+    "url": "http://arxiv.org/abs/2607.15245v1",
+    "summary_ja": "共生星系の再帰新星T CrBについて、過去の再帰間隔・軌道位相・降着状態変化から次回爆発時期を統計的に制約。近接連星の軌道位相を利用する点は類似するが、フレア研究とは主題が異なる。",
+    "abstract": "T Coronae Borealis (T CrB) is the nearest symbiotic recurrent nova and is now intensively monitored for its next eruption. We combine three constraints on the eruption time: historical recurrence, orbital phase, and recent accretion-state evolution. Conditioning on no eruption by 2026 July 11, the three effective historical intervals give illustrative survival-conditioned probabilities of 30.2\\% for the rest of 2026 and 56.9\\% within the following year; these are empirical indicators, not physical prediction probabilities. The four adopted historical eruption phases do not select a unique ignition phase, but form two loose pairs near $φ\\simeq0.44$ and $φ\\simeq0.62$, used here only as monitoring windows. The 1946 pre-eruption dip is difficult to explain by either a pure accretion-rate decline or standard dust extinction, and may have involved both accretion restructuring and source-dependent obscuration. If the renewed 2026 decline is the true pre-1946 analogue, an eruption around 2026 December remains plausible. Conversely, if post-2024 brightness remains below the 2014--2023 high state, an accretion-deficit estimate gives an earliest lower limit near 2029 May. The data therefore support conditional monitoring windows, not a unique date. These are conditional diagnostic scenarios rather than competing point predictions; the eventual eruption epoch will test their underlying assumptions."
+  },
+  "1784808571.252639": {
+    "id": "2607.14637v2",
+    "title": "Efficiency of Tidal Dissipation in Convective Flow Under Rapid Tidal Forcing",
+    "title_ja": "急速な潮汐強制下での対流フローにおける潮汐散逸効率",
+    "authors": [
+      "Hongzhe Zhou",
+      "Dong Lai"
+    ],
+    "url": "http://arxiv.org/abs/2607.14637v2",
+    "summary_ja": "近接連星や星惑星系の潮汐相互作用による対流層でのエネルギー散逸効率を三層対流ボックスシミュレーションで評価し、乱流粘性の潮汐周波数依存性を議論。近接連星を扱うがフレア観測研究とは異なる理論研究。",
+    "abstract": "For close binaries and star-planet systems, tidal interactions mediate the energy transfer between the orbital motion and the internal flows of the bodies involved, thus playing a central role in their evolution. For equilibrium tides, the associated energy transfer is commonly modeled through an effective viscosity acting on the tidal flow. However, the scaling of viscous dissipation efficiency with tidal frequency $ω_\\text{T}$ remains debated, particularly when $ω_\\text{T}$ greatly exceeds the convective eddy turnover frequency $ω_\\text{c}$. Previous numerical studies have addressed this issue by subjecting a turbulent convective flow to an oscillating background shear mimicking equilibrium tides. In this work, we adopt a novel three-layered convective box -- designed to represent a stellar convection zone sandwiched between two stable layers -- driven by an external periodic forcing. We quantify tidal dissipation efficiency by the forcing power on the flow in steady state. Our results yield a shallower scaling of tidal power per unit mass with $ω_\\text{T}$ than reported in earlier shear-flow simulations. This scaling is consistent with the prediction by \\cite{Terquem2021}, suggesting that the effective turbulent viscosity depends only weakly on $ω_\\text{T}$, although our simulations are restricted to $ω_\\text{T}\\lesssim 10ω_\\text{c}$. Moreover, we find no evidence of inverse energy transfer (or ``negative viscosity''), a phenomenon observed in some prior shear-flow simulations. We further investigate the influence of rotation within the same local framework. Slow rotation ($Ω\\lesssim ω_\\text{T}$) tends to enhance the tidal power, whereas fast rotation ($Ω\\gtrsimω_\\text{T}$) significantly suppresses it. We discuss the limitations of our approach and the broader implications of our findings."
+  },
+  "1784808571.561179": {
+    "id": "2607.14636v2",
+    "title": "The coronal mass ejection productivity of solar active region 13664/8",
+    "title_ja": "太陽活動領域13664/8のコロナ質量放出生産性",
+    "authors": [
+      "Lijuan Liu",
+      "Yuming Wang",
+      "Quanhao Zhang",
+      "Jingnan Guo",
+      "Yutian Chi"
+    ],
+    "url": "http://arxiv.org/abs/2607.14636v2",
+    "summary_ja": "2024年5月に多数のXクラスフレアとCMEを発生させた太陽活動領域の磁場進化を解析し、複数の衝突型極性反転線が高いCME生産性の鍵であることを示した太陽物理研究。恒星フレアへの応用は議論されておらず関連度は限定的。",
+    "abstract": "In May 2024, NOAA active region (AR) complex 13664/8 was one of the most productive regions of the current solar cycle, producing 12 X-class flares and over 20 coronal mass ejections (CMEs) and triggering the strongest geomagnetic storm since 2003. We investigate why this AR complex was so CME-productive. Using primarily SDO/AIA and SDO/HMI observations, we analyzed its photospheric magnetic evolution, eruption sources, eruption waiting times, and magnetic parameters in comparison with five other ARs. The region initially contained only AR 13664 and exhibited limited flare activity until AR 13668 emerged on May 4, after which clustered major flares and CMEs occurred. Rapid, complex flux emergence substantially increased the region's area, magnetic flux, complexity, and nonpotentiality. The increased complexity was manifested by at least 12 emerging bipoles and six collisional polarity inversion lines (cPILs) formed between nonconjugated polarities, all showing sustained collision and shearing and serving as eruption sources. Decay index distributions show systematically lower critical heights (<45 Mm) above CME source regions. The CME waiting time distribution exhibits two peaks, suggesting that multiple cPILs enhanced CME productivity by increasing both recurrent CMEs from the same source and disturbance-triggered CMEs from nearby sources. These results indicate that, in addition to sufficient nonpotentiality and rapid background-field decay, high magnetic complexity accompanied by dynamical collisional shearing at multiple cPILs was crucial for the extreme CME productivity of AR 13664/8."
+  },
+  "1784808571.877249": {
+    "id": "2607.14043v1",
+    "title": "Observational Evidence for Counter-helicity Magnetic Reconnection in a Solar Eruption",
+    "title_ja": "太陽噴出現象における逆ヘリシティ磁気リコネクションの観測的証拠",
+    "authors": [
+      "Jinrui Chang",
+      "Yi Bi",
+      "Bo Yang",
+      "Junchao Hong",
+      "Jiayan Yang",
+      "Qingmei Wang"
+    ],
+    "url": "http://arxiv.org/abs/2607.14043v1",
+    "summary_ja": "M7.0フレアの多波長観測と非線形force-free磁場外挿から逆符号ヘリシティ系間のリコネクションが噴出を駆動したことを示した太陽物理研究。フレア機構としては関連するが恒星系での議論はない。",
+    "abstract": "Magnetic reconnection between coronal magnetic systems carrying opposite self-helicity may play a role in solar eruptions, but observational evidence remains limited. We investigate an M7.0 flare in NOAA Active Region 13615 on 2024 March 28 using multiwavelength observations and nonlinear force-free field extrapolations. The reconstructed coronal field reveals a low-lying positive-helicity core field beneath an overlying magnetic system of opposite sign. During the eruption, the footpoint connectivity of these two magnetic systems changes markedly: field lines rooted in the western footpoint region change from positive to negative helicity, and the positive-helicity domain is substantially reduced. These changes are accompanied by a remote chromospheric brightening, intermittent EUV stripe-like brightenings extending from the source region toward the remote chromospheric brightening, the subsequent formation of large-scale coronal loops, and a weak outer hard X-ray source located at a footpoint of the core field. Together, these results suggest that the eruption was closely associated with reconnection between the core field and the overlying counter-helicity system, providing observational evidence that counter-helicity reconnection can contribute to the destabilization of eruptive solar magnetic fields."
+  },
+  "1784808572.187149": {
+    "id": "2607.13913v1",
+    "title": "Long-Baseline VLF Observations of Solar Flares from Antarctica",
+    "title_ja": "南極からの長基線VLF観測による太陽フレア研究",
+    "authors": [
+      "Kamen Kozarev",
+      "Peter Petkov",
+      "Ivaylo Nachev",
+      "Veselka Radeva",
+      "Momchil Dechev",
+      "Galin Borisov",
+      "Anton Atanasov"
+    ],
+    "url": "http://arxiv.org/abs/2607.13913v1",
+    "summary_ja": "南極の長基線VLF電波観測を用いてGOES X線フラックスと相関させ太陽フレアによる電離圏D層擾乱を解析。太陽フレアのX線モニタリングという点で部分的に関連するが、対象は太陽でRS CVn型連星やHα観測とは異なる。",
+    "abstract": "We present long-baseline Very Low Frequency (VLF) observations of solar flare-induced ionospheric disturbances obtained at the Bulgarian Polar Astronomical Observatory (St. Kliment Ohridski Base) on Livingston island, Antarctica. Using continuous VLF transmissions at 21.4 kHz (NPM, Hawaii) and 24.0 kHz (NAA, Maine), propagating over trans-hemispheric paths exceeding 11000 km, we analyze observations of solar flares during the period 24 January--8 February 2025. After removing the strong diurnal signal via superposed epoch analysis, we analyse the flare-related perturbations in VLF amplitude and their correlation with GOES soft X-ray flux for 250 flares of C and M class. The long propagation paths provide enhanced sensitivity to flare-driven changes in D-region ionization. The observations reveal clear, frequency-dependent responses and measurable time delays between X-ray and VLF peaks. These delays, including cases of near-zero or negative lag for stronger events, highlight the role of flare spectral characteristics and D-region recombination processes. Our results demonstrate the scientific value of long-baseline Antarctic VLF observations for detecting and timing GOES-class flares, while also highlighting key limitations, such as background variability and path-dependent propagation effects, which must be quantified for reliable VLF-based flare monitoring."
+  },
+  "1784808572.504029": {
+    "id": "2607.13867v1",
+    "title": "Cradle of Life: From the Formation of Stars to Habitable Worlds with the SKAO",
+    "title_ja": "生命のゆりかご: SKAOによる星形成から居住可能惑星までの研究",
+    "authors": [
+      "Eleonora Bianchi",
+      "Joseph R. Callingham",
+      "the Cradle of Life working group"
+    ],
+    "url": "http://arxiv.org/abs/2607.13867v1",
+    "summary_ja": "SKAOによる星・惑星形成からバイオシグネチャー探索までを俯瞰するレビュー。低周波帯での系外惑星磁場・宇宙天気検出に触れる点でプロファイルと部分的に関連するが、Hα輝線やX線フレア観測の具体的手法とは異なる。",
+    "abstract": "This chapter provides an overview of the different science cases covered by the \"Cradle of Life\" working group, which aims to leverage the capabilities of the Square Kilometre Array Observatory (SKAO) to trace the physical and chemical pathways toward stars and planets formation, how such stars impact their planets, and whether life could exist in such conditions. At its highest frequencies, the SKAO will probe the earliest stages of the raw material fuelling planet formation, while enabling deep, unprecedented searches for prebiotic molecules both in high-mass and solar-type protostars. Concurrently, the lowest frequencies will be deployed to detect and characterize exoplanetary magnetic fields via their auroral radio emission, and the type of space weather a planet experiences from its host star. Across the entire frequency range, the SKA telescopes will conduct systematic searches of technosignatures. Together, these high-impact research areas establish a comprehensive roadmap for the SKAO to uncover the origins of life in the universe."
+  }
+}

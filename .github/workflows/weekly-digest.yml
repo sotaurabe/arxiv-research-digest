@@ -53,6 +53,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/sent_ids.json data/candidates.json data/slack_threads.json
+          git add data/sent_ids.json data/candidates.json
+          [ -f data/slack_threads.json ] && git add data/slack_threads.json
           git diff --quiet --cached || git commit -m "chore: weekly digest $(date +%F) [skip ci]"
           git push

@@ -237,10 +237,15 @@ def main():
     else:
         print("本日は関連度の高い論文がありませんでした(メール送信はスキップ)")
 
-    # 判定した全候補(関連度に関わらず)を送信済みとして記録し、重複判定を避ける
-    sent_ids.update(p["id"] for p in judged)
+    # 実際にメール送信した(閾値以上の)論文だけを送信済みとして記録し、二重通知を防ぐ。
+    # 閾値未満の論文はここに記録しない — LOOKBACK_DAYS が尽きるまで、
+    # 翌日以降の実行でも再度候補として取得・判定される。
+    sent_ids.update(p["id"] for p in relevant)
     save_sent_ids(sent_ids)
-    print("送信済みIDを更新しました")
+    print(
+        f"送信済みIDを更新しました(今回 {len(relevant)} 件追加。"
+        f"閾値未満だった {len(judged) - len(relevant)} 件は次回以降も候補として残ります)"
+    )
 
 
 if __name__ == "__main__":

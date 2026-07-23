@@ -105,10 +105,16 @@ def main():
     else:
         print("関連度の高い論文がなかったため、メール送信はスキップしました")
 
+    # 実際にメール送信した(閾値以上の)論文だけを送信済みとして記録し、二重通知を防ぐ。
+    # 閾値未満の論文はここに記録しない — LOOKBACK_DAYS が尽きるまで、
+    # 次回以降の実行でも再度候補として取得・判定される。
     sent_ids = load_sent_ids()
-    sent_ids.update(p["id"] for p in judged)
+    sent_ids.update(p["id"] for p in relevant)
     save_sent_ids(sent_ids)
-    print(f"送信済みIDを更新しました(累計 {len(sent_ids)} 件)")
+    print(
+        f"送信済みIDを更新しました(今回 {len(relevant)} 件追加、累計 {len(sent_ids)} 件。"
+        f"閾値未満だった {len(judged) - len(relevant)} 件は次回以降も候補として残ります)"
+    )
 
     # 一時ファイルの後始末
     for tmp in ["candidates.json", "judged.json"]:

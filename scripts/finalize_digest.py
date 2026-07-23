@@ -31,7 +31,8 @@ from datetime import datetime
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-RELEVANCE_THRESHOLD = 8
+# 変更は環境変数 RELEVANCE_THRESHOLD で行う(GitHub の Actions variables から設定可能)
+RELEVANCE_THRESHOLD = int(os.environ.get("RELEVANCE_THRESHOLD", "8"))
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SENT_IDS_PATH = os.path.join(BASE_DIR, "data", "sent_ids.json")

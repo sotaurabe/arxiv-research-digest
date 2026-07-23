@@ -8,7 +8,12 @@ on:
   schedule:
     # JST 月曜 08:00 = UTC 日曜 23:00
     - cron: "0 23 * * 0"
-  workflow_dispatch: {}   # 手動実行も可
+  workflow_dispatch:
+    inputs:
+      relevance_threshold:
+        description: "この実行だけ通知閾値を上書きする(空欄なら通常設定を使用)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -43,6 +48,10 @@ jobs:
           ARXIV_LOOKBACK_DAYS: "8"
           ARXIV_MAX_RESULTS: "500"
           DIGEST_CLAUDE_MODEL: "sonnet"
+          # 通知閾値。手動実行の入力 > リポジトリ変数 > 既定値8 の順に優先。
+          # 恒久的に変えるときは Settings → Secrets and variables → Actions →
+          # Variables の RELEVANCE_THRESHOLD を編集する(コード変更不要)。
+          RELEVANCE_THRESHOLD: ${{ inputs.relevance_threshold || vars.RELEVANCE_THRESHOLD || '8' }}
         run: |
           python scripts/fetch_candidates.py
           python scripts/judge_with_claude.py

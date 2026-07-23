@@ -1,0 +1,101 @@
+name: Update Research Profile
+
+# 研究プロファイル(config/research_profile.md)を再生成するワークフロー。
+#
+# プロファイルは「どの論文を通知するか」を決める判定基準そのものなので、
+# main に直接コミットせず必ずプルリクエストを作り、人がレビューしてから反映する。
+#
+# 実行契機:
+#   - 手動 (Actions タブ → Run workflow)。論文が増えたとき・研究テーマが変わったとき
+#   - 四半期ごとの自動実行(取りこぼし防止のリマインダーとして)
+
+on:
+  workflow_dispatch:
+    inputs:
+      author_name:
+        description: "Semantic Scholar で検索する著者名"
+        required: true
+        default: "Sota Urabe"
+      extra_text_file:
+        description: "追加参考テキスト(修士論文要約など)のパス。不要なら空欄"
+        required: false
+        default: "config/thesis_summary_ja.txt"
+  schedule:
+    # JST 1/4/7/10月 1日 09:00 = UTC 前日 00:00
+    - cron: "0 0 1 1,4,7,10 *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Python deps
+        run: pip install requests
+
+      - name: Install Claude Code CLI
+        run: |
+          curl -fsSL https://claude.ai/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Regenerate research profile
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          DIGEST_CLAUDE_MODEL: "sonnet"
+          AUTHOR_NAME: ${{ inputs.author_name || 'Sota Urabe' }}
+          EXTRA_TEXT_FILE: ${{ inputs.extra_text_file || 'config/thesis_summary_ja.txt' }}
+        run: |
+          if [ -n "$EXTRA_TEXT_FILE" ]; then
+            python scripts/build_profile.py --engine cli \
+              --author-name "$AUTHOR_NAME" --extra-text-file "$EXTRA_TEXT_FILE"
+          else
+            python scripts/build_profile.py --engine cli --author-name "$AUTHOR_NAME"
+          fi
+
+      - name: Open pull request if the profile changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- config/research_profile.md; then
+            echo "プロファイルに差分はありません。PRは作成しません。"
+            exit 0
+          fi
+
+          BRANCH="profile-update/$(date +%Y%m%d-%H%M%S)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add config/research_profile.md
+          git commit -m "chore: regenerate research profile"
+          git push origin "$BRANCH"
+
+          {
+            echo 'scripts/build_profile.py による自動再生成です。'
+            echo
+            echo '**マージ前に必ず「関連度が高い/低いの目安」節を確認してください。**'
+            echo 'ここが変わると Slack に通知される論文の範囲が変わります。'
+            echo
+            echo '- 意図した変更であればマージしてください'
+            echo '- 意図しない変化(研究テーマが抜けている等)があれば、'
+            echo '  config/thesis_summary_ja.txt に補足を追記してから再実行してください'
+          } > /tmp/pr-body.md
+
+          # PR作成が権限設定で拒否されることがあるため、失敗しても
+          # 比較URLを案内してワークフロー自体は成功させる
+          if ! gh pr create --base "${GITHUB_REF_NAME}" --head "$BRANCH" \
+               --title "研究プロファイルの更新 ($(date +%F))" --body-file /tmp/pr-body.md; then
+            echo "::warning::gh pr create に失敗しました。以下から手動でPRを作成してください"
+            echo "https://github.com/${GITHUB_REPOSITORY}/compare/${GITHUB_REF_NAME}...${BRANCH}?expand=1"
+          fi

@@ -4,7 +4,12 @@ on:
   schedule:
     # JST 8:00 = UTC 23:00 (前日)
     - cron: "0 23 * * *"
-  workflow_dispatch: {}  # 手動実行もできるようにしておく
+  workflow_dispatch:
+    inputs:
+      relevance_threshold:
+        description: "この実行だけ通知閾値を上書きする(空欄なら通常設定を使用)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -31,6 +36,8 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          # 通知閾値。手動実行の入力 > リポジトリ変数 > 既定値8 の順に優先。
+          RELEVANCE_THRESHOLD: ${{ inputs.relevance_threshold || vars.RELEVANCE_THRESHOLD || '8' }}
         run: python scripts/daily_digest.py
 
       - name: Commit updated sent_ids.json

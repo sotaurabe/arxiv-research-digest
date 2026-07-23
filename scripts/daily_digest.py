@@ -27,7 +27,9 @@ import anthropic
 # ==== 設定項目(必要に応じて書き換えてください) ====
 ARXIV_CATEGORIES = ["astro-ph.SR", "astro-ph.HE"]
 LOOKBACK_DAYS = 1  # 何日分の新着を見るか(毎日実行なら1でOK。実行間隔を空けるなら増やす)
-RELEVANCE_THRESHOLD = 8  # 10点満点中、これ以上のスコアのみ通知(本数より精度重視)
+# 10点満点中、これ以上のスコアのみ通知(本数より精度重視)。
+# 変更は環境変数 RELEVANCE_THRESHOLD で行う(GitHub の Actions variables から設定可能)。
+RELEVANCE_THRESHOLD = int(os.environ.get("RELEVANCE_THRESHOLD", "8"))
 MAX_CANDIDATES_PER_RUN = 150  # 1回の判定に投げる論文数の上限(コスト対策)
 MODEL = "claude-sonnet-4-6"
 # ===================================================

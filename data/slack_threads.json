@@ -636,5 +636,22 @@
     "url": "http://arxiv.org/abs/2610.11799v1",
     "summary_ja": "ケプラー領域で最大級のフレアを出す赤色巨星KIC 2852961を、地上分光と宇宙測光で再調べした。新しい視線速度により近接連星系であることを確認し、潮汐で軌道円化と自転同期がほぼ進む一方、差動回転が残ることを示した。スーパーフレアは副星との位相依存の相互作用よりも主星内部の磁気活動が支配し、大きな黒点が磁気エネルギーを蓄えると結論した。連星系の活動的な晩期型星のスーパーフレアという点でプロファイルに強く合致する。",
     "abstract": "Flare activity in red giants is quite common when continuously monitored with high-precision space photometry. In fact, the most powerful flares, also known as \"superflares\" have been observed on red giant stars. KIC 2852961 is a red giant star producing the highest-energy flares in the Kepler field, and is also known for its large-amplitude starspot-induced light variations. Our goal is to find out what causes the extreme flare activity and flare energies in this star. For our investigations, we use ground-based spectroscopic measurements and space photometric data, which we process using standard tools. We also collect relevant data from databases of large surveys such as Gaia. Our new radial velocity data confirm that the red giant star is part of a close binary system, in which tidal forces play a crucial role in controlling the evolution of the binary system. Our results show that tidal evolution has driven the system close to orbital circularization and rotational synchronization, but it did not completely constrain the differential rotation of the red giant, in which the magnetic dynamo can operate extremely efficiently. We find that high-energy (super)flares are primarily controlled by the internal magnetic activity of the active giant component, rather than phase-dependent interactions with the secondary star. The large spot-induced rotational light modulations indicate extensive starspots that can store enormous amounts of magnetic energy. This provides the conditions for the formation of extremely large flares, confirming the close relationship between large spot coverage and high flare energies and/or frequency. Behind all this, differential rotation may play a dual role in the flare activity of KIC 2852961: it contributes both to the formation of large starspots and to the shearing and twisting of coronal magnetic fields that can power energetic superflares."
+  },
+  "1794191899.495249": {
+    "id": "2611.05881v1",
+    "title": "Frequent Optical Flares in an M-type Detached Eclipsing Binary TIC 349005337",
+    "title_ja": "M型分離型食連星TIC 349005337における頻繁な可視フレア",
+    "authors": [
+      "Xiao Zhou",
+      "Liying Zhu",
+      "Wei Hu",
+      "Gil Nachmani",
+      "Jia Zhang",
+      "Mikhail Yu. Kovalev",
+      "Ergang Zhao"
+    ],
+    "url": "http://arxiv.org/abs/2611.05881v1",
+    "summary_ja": "軌道周期2.6079日のM型分離型食連星TIC 349005337を、TESSの高頻度測光とLAMOSTの中分解能分光で解析した。視線速度曲線と光度曲線から両星の質量と半径を決定し(M1=0.517, M2=0.298太陽質量)、最大3.87×10^34 ergを含む12個のフレアを同定した。連星系における磁気活動とスーパーフレアを扱う点で、本研究のテーマに近い。",
+    "abstract": "A comprehensive photometric and spectroscopic analysis of TIC 349005337, a highly active M-type detached eclipsing binary with an orbital period of 2.6079133 days, is presented utilizing high-cadence and long-term monitoring photometry from the Transiting Exoplanet Survey Satellite (TESS) and medium-resolution spectroscopy from the Large Sky Area Multi-Object Fiber Spectroscopic Telescope (LAMOST). By integrating radial velocity curves with light curves, we determined the fundamental physical parameters for both components. The system consists of an M-dwarf primary ($M_1 = 0.517 \\pm 0.009 M_\\odot$, $R_1 = 0.518 \\pm 0.003 R_\\odot$) and a fully convective secondary ($M_2 = 0.298 \\pm 0.004 M_\\odot$, $R_2 = 0.357 \\pm 0.003 R_\\odot$). A total of 12 high-energy stellar flares, with the most energetic event reaching $3.87 \\times 10^{34}$ erg, is identified, confirming the system is in a state of magnetic hyper-activity. The frequent superflares suggest that intense magnetic activity and significant starspot coverage play a dominant role in altering the stellar atmospheric structure. As the secondary component falls below the fully convective boundary, these energetic flares provide critical empirical constraints for distributed dynamo models in the low-mass regime. Our results highlight TIC 349005337 as an ideal laboratory for investigating the interplay between binary dynamics, magnetic reconnection, and the resulting impact on the atmospheric stability of potential orbiting exoplanets."
   }
 }
